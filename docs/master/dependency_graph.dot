@@ -26,15 +26,9 @@ digraph depend {
 		"theories/ess_sup_inf"	[URL="mathcomp.analysis.ess_sup_inf.html",
 			fillcolor=5,
 			label=ess_sup_inf];
-		"theories/esum"	[URL="mathcomp.analysis.esum.html",
-			fillcolor=5,
-			label=esum];
 		"theories/lebesgue_measure"	[URL="mathcomp.analysis.lebesgue_measure.html",
 			fillcolor=5,
 			label=lebesgue_measure];
-		"theories/numfun"	[URL="mathcomp.analysis.numfun.html",
-			fillcolor=5,
-			label=numfun];
 		"theories/sequences"	[URL="mathcomp.analysis.sequences.html",
 			fillcolor=5,
 			label=sequences];
@@ -62,6 +56,12 @@ digraph depend {
 		"theories/ftc"	[URL="mathcomp.analysis.ftc.html",
 			fillcolor=5,
 			label=ftc];
+		"theories/esum"	[URL="mathcomp.analysis.esum.html",
+			fillcolor=5,
+			label=esum];
+		"theories/numfun"	[URL="mathcomp.analysis.numfun.html",
+			fillcolor=5,
+			label=numfun];
 		"theories/measurable_realfun"	[URL="mathcomp.analysis.measurable_realfun.html",
 			fillcolor=5,
 			label=measurable_realfun];
@@ -405,6 +405,10 @@ digraph depend {
 			fillcolor=10,
 			fontcolor=white,
 			label=lebesgue_integral_differentiation];
+		"theories/lebesgue_integral_theory/giry"	[URL="mathcomp.analysis.lebesgue_integral_theory.giry.html",
+			fillcolor=10,
+			fontcolor=white,
+			label=giry];
 	}
 	"classical/all_classical" -> "reals/prodnormedzmodule";
 	"classical/all_classical" -> "theories/topology_theory/topology_structure";
@@ -443,7 +447,8 @@ digraph depend {
 	"experimental_reals/realseq" -> "experimental_reals/realsum";
 	"experimental_reals/realsum" -> "experimental_reals/distr";
 	"reals_stdlib/Rstruct" -> "analysis_stdlib/Rstruct_topology";
-	"theories/ereal" -> "theories/tvs";
+	"theories/ereal" -> "theories/normedtype_theory/pseudometric_normed_Zmodule";
+	"theories/ereal" -> "theories/normedtype_theory/ereal_normedtype";
 	"theories/topology_theory/topology" -> "theories/ereal";
 	"theories/topology_theory/topology" -> "theories/function_spaces";
 	"theories/landau" -> "theories/sequences";
@@ -486,14 +491,14 @@ digraph depend {
 	"theories/function_spaces" -> "theories/cantor";
 	"theories/function_spaces" -> "theories/tvs";
 	"theories/ess_sup_inf" -> "theories/hoelder";
-	"theories/esum" -> "theories/measure_theory/measurable_structure";
 	"theories/lebesgue_measure" -> "theories/ess_sup_inf";
 	"theories/lebesgue_measure" -> "theories/borel_hierarchy";
 	"theories/lebesgue_measure" -> "theories/lebesgue_integral_theory/simple_functions";
 	"theories/measure_theory/measure" -> "theories/lebesgue_stieltjes_measure";
-	"theories/numfun" -> "theories/esum";
-	"theories/sequences" -> "theories/numfun";
 	"theories/sequences" -> "theories/realfun";
+	"theories/sequences" -> "theories/numfun";
+	"theories/sequences" -> "theories/measure_theory/measurable_structure";
+	"theories/sequences" -> "theories/showcase/pnt";
 	"theories/sequences" -> "analysis_stdlib/Rstruct_topology";
 	"theories/cantor" -> "theories/all_analysis";
 	"theories/tvs" -> "theories/normedtype_theory/num_normedtype";
@@ -517,9 +522,12 @@ digraph depend {
 	"theories/trigo" -> "theories/gauss_integral";
 	"theories/trigo" -> "theories/pi_irrational";
 	"theories/ftc" -> "theories/trigo";
+	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/lebesgue_integral_theory/giry";
 	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/charge";
 	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/hoelder";
 	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/kernel";
+	"theories/esum" -> "theories/measure_theory/measure_function";
+	"theories/numfun" -> "theories/esum";
 	"theories/measure_theory/measurable_structure" -> "theories/measure_theory/measurable_function";
 	"theories/measure_theory/measure_function" -> "theories/measure_theory/counting_measure";
 	"theories/measure_theory/measure_function" -> "theories/measure_theory/dirac_measure";
@@ -552,6 +560,5 @@ digraph depend {
 	"theories/gauss_integral" -> "theories/probability";
 	"theories/kernel" -> "theories/probability";
 	"theories/pi_irrational" -> "theories/all_analysis";
-	"theories/all_analysis" -> "theories/showcase/pnt";
 	"analysis_stdlib/Rstruct_topology" -> "analysis_stdlib/showcase/uniform_bigO";
 }
