@@ -680,7 +680,21 @@ nat_snum below for an example on how to add your favorite type.
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="bottom" class="id"><a name="bottom" class="" title="bottom not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="bottom" class="id"><a name="bottom" class="" title="bottom :
+forall {R : numDomainType} {i : Itv.t},
+Itv.def (Itv.num_sem (R:=R)) i -> ~ unify_itv i empty_itv
+
+bottom is not universe polymorphic
+Expanded type for implicit arguments
+bottom :
+forall {R : numDomainType} {i : Itv.t},
+Itv.def (Itv.num_sem (R:=R)) i -> unify_itv i empty_itv -> False
+
+Arguments bottom {R i} x {_}
+bottom is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.bottom
+Declared in
+library mathcomp.algebra.interval_inference, line 568, characters 6-12
 ">bottom</a></span><span class="id"> </span><span id="x:134" class="id"><a name="x:134" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#dc6bc0b0388e7cb19d15aedb2a85d85b">=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#False">False</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -688,7 +702,16 @@ nat_snum below for an example on how to add your favorite type.
 <span class="gallina-kwd">by</span><span class="id"> move:</span><span class="id"> x</span><span class="id"> =&gt;</span><span class="id"> [x</span><span class="id"> /=</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#andP">andP</a></span><span class="id">[]];</span><span class="id"> move:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"> =&gt;</span><span class="id"> [[[]|]|]</span><span class="id"> []</span><span class="id"> //=</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html#d18bf1e242aa8006719f115a8f44092e">[swap]</a></span><span class="id"> -&gt;</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0" class="id"><a name="gt0" class="" title="gt0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0" class="id"><a name="gt0" class="" title="gt0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]0%Z, +oo[%R) -> ((0 : R) < (x%:num : R))%R
+
+gt0 is not universe polymorphic
+Arguments gt0 {R i} x {_}
+gt0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.gt0
+Declared in
+library mathcomp.algebra.interval_inference, line 574, characters 6-9
 ">gt0</a></span><span class="id"> </span><span id="x:135" class="id"><a name="x:135" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> &lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:135">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -697,14 +720,32 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> move:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"> =&gt;</span><span class="id"> [[[]|]|]</span><span class="id"> []</span><span class="id"> //=;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_def">lt_def</a></span><span class="id"> =&gt;</span><span class="id"> -&gt;</span><span class="id"> //</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> -&gt;</span><span class="id"> /=</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="le0F" class="id"><a name="le0F" class="" title="le0F not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="le0F" class="id"><a name="le0F" class="" title="le0F :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]0%Z, +oo[%R) -> ((x%:num : R) <= (0 : R))%R = false
+
+le0F is not universe polymorphic
+Arguments le0F {R i} x {_}
+le0F is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.le0F
+Declared in
+library mathcomp.algebra.interval_inference, line 580, characters 6-10
 ">le0F</a></span><span class="id"> </span><span id="x:136" class="id"><a name="x:136" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:136">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> &lt;=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?</span><span class="id"> ?;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_geF">lt_geF</a></span><span class="id">//;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#gt0">gt0</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="lt0" class="id"><a name="lt0" class="" title="lt0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="lt0" class="id"><a name="lt0" class="" title="lt0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]-oo, 0%Z[%R) -> ((x%:num : R) < (0 : R))%R
+
+lt0 is not universe polymorphic
+Arguments lt0 {R i} x {_}
+lt0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.lt0
+Declared in
+library mathcomp.algebra.interval_inference, line 586, characters 6-9
 ">lt0</a></span><span class="id"> </span><span id="x:137" class="id"><a name="x:137" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#7a2442f26cc812c3d31340abc9c9fb22">&lt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:137">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> &lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -714,14 +755,32 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> move=&gt;</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> -&gt;</span><span class="id"> /=</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0F" class="id"><a name="ge0F" class="" title="ge0F not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0F" class="id"><a name="ge0F" class="" title="ge0F :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]-oo, 0%Z[%R) -> ((0 : R) <= (x%:num : R))%R = false
+
+ge0F is not universe polymorphic
+Arguments ge0F {R i} x {_}
+ge0F is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.ge0F
+Declared in
+library mathcomp.algebra.interval_inference, line 591, characters 6-10
 ">ge0F</a></span><span class="id"> </span><span id="x:138" class="id"><a name="x:138" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#7a2442f26cc812c3d31340abc9c9fb22">&lt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> &lt;=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:138">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?</span><span class="id"> ?;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_geF">lt_geF</a></span><span class="id">//;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#lt0">lt0</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0" class="id"><a name="ge0" class="" title="ge0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="ge0" class="id"><a name="ge0" class="" title="ge0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `[0%Z, +oo[%R) -> ((0 : R) <= (x%:num : R))%R
+
+ge0 is not universe polymorphic
+Arguments ge0 {R i} x {_}
+ge0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.ge0
+Declared in
+library mathcomp.algebra.interval_inference, line 597, characters 6-9
 ">ge0</a></span><span class="id"> </span><span id="x:139" class="id"><a name="x:139" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> &lt;=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:139">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#aaa112dcf1c68a107b7d8312dfcaf949"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -729,14 +788,32 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> case:</span><span class="id"> x</span><span class="id"> =&gt;</span><span class="id"> [x</span><span class="id"> /=</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#andP">andP</a></span><span class="id">[]];</span><span class="id"> move:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"> =&gt;</span><span class="id"> [[[]|]|]</span><span class="id"> []</span><span class="id"> //=</span><span class="id"> _</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> -&gt;</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="lt0F" class="id"><a name="lt0F" class="" title="lt0F not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="lt0F" class="id"><a name="lt0F" class="" title="lt0F :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `[0%Z, +oo[%R) -> ((x%:num : R) < (0 : R))%R = false
+
+lt0F is not universe polymorphic
+Arguments lt0F {R i} x {_}
+lt0F is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.lt0F
+Declared in
+library mathcomp.algebra.interval_inference, line 603, characters 6-10
 ">lt0F</a></span><span class="id"> </span><span id="x:140" class="id"><a name="x:140" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:140">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> &lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.le_gtF">le_gtF</a></span><span class="id">//;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#ge0">ge0</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="le0" class="id"><a name="le0" class="" title="le0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="le0" class="id"><a name="le0" class="" title="le0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]-oo, 0%Z]%R) -> ((x%:num : R) <= (0 : R))%R
+
+le0 is not universe polymorphic
+Arguments le0 {R i} x {_}
+le0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.le0
+Declared in
+library mathcomp.algebra.interval_inference, line 609, characters 6-9
 ">le0</a></span><span class="id"> </span><span id="x:141" class="id"><a name="x:141" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#7a2442f26cc812c3d31340abc9c9fb22">&lt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#e21dc36a5a0561f30b12b92200961bae"> &gt;=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#e21dc36a5a0561f30b12b92200961bae"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:141">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#e21dc36a5a0561f30b12b92200961bae"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#e21dc36a5a0561f30b12b92200961bae"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -744,14 +821,32 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> case:</span><span class="id"> x</span><span class="id"> =&gt;</span><span class="id"> [x</span><span class="id"> /=</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#andP">andP</a></span><span class="id">[]];</span><span class="id"> move:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"> =&gt;</span><span class="id"> [[[]|]|]</span><span class="id"> []</span><span class="id"> //=</span><span class="id"> _</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> -&gt;</span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0F" class="id"><a name="gt0F" class="" title="gt0F not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="gt0F" class="id"><a name="gt0F" class="" title="gt0F :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]-oo, 0%Z]%R) -> ((0 : R) < (x%:num : R))%R = false
+
+gt0F is not universe polymorphic
+Arguments gt0F {R i} x {_}
+gt0F is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.gt0F
+Declared in
+library mathcomp.algebra.interval_inference, line 614, characters 6-10
 ">gt0F</a></span><span class="id"> </span><span id="x:142" class="id"><a name="x:142" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#7a2442f26cc812c3d31340abc9c9fb22">&lt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> &lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:142">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x_':&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> ?;</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.le_gtF">le_gtF</a></span><span class="id">//;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#le0">le0</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="cmp0" class="id"><a name="cmp0" class="" title="cmp0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="cmp0" class="id"><a name="cmp0" class="" title="cmp0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+unify_itv i (Itv.Real `]-oo, +oo[%R) -> (0 >=< x%:num)%R
+
+cmp0 is not universe polymorphic
+Arguments cmp0 {R i} x {_}
+cmp0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.cmp0
+Declared in
+library mathcomp.algebra.interval_inference, line 620, characters 6-10
 ">cmp0</a></span><span class="id"> </span><span id="x:143" class="id"><a name="x:143" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#Real">Real</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#AnySign">AnySign</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#be90acc7b8ec20a5cb3bf2d74dc2120c"> &gt;=&lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#be90acc7b8ec20a5cb3bf2d74dc2120c"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:143">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -762,14 +857,36 @@ Qed.</div></details>
 &nbsp;&nbsp;<span class="id">move=&gt;</span><span class="id"> sx;</span><span class="id"> rewrite</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.comparable">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.comparable">comparable</a></span><span class="id"> sx//</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orbT">orbT</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="neq0" class="id"><a name="neq0" class="" title="neq0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="neq0" class="id"><a name="neq0" class="" title="neq0 :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+interval_inference.unify (fun ix iy : Itv.t => ~~ Itv.sub ix iy)
+  (Itv.Real `[0%Z, 0%Z]%R) i ->
+x%:num%R != 0%R :> R
+
+neq0 is not universe polymorphic
+Arguments neq0 {R i} x {_}
+neq0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.neq0
+Declared in
+library mathcomp.algebra.interval_inference, line 623, characters 6-10
 ">neq0</a></span><span class="id"> </span><span id="x:144" class="id"><a name="x:144" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:144">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#228e85e3c31a939cba019f255574c875"> !=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#228e85e3c31a939cba019f255574c875"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#228e85e3c31a939cba019f255574c875"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#228e85e3c31a939cba019f255574c875"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> case:</span><span class="id"> x</span><span class="id"> =&gt;</span><span class="id"> [x</span><span class="id"> /=</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#andP">andP</a></span><span class="id">[]];</span><span class="id"> move:</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"> =&gt;</span><span class="id"> [[[]|]|]</span><span class="id"> []</span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="eq0F" class="id"><a name="eq0F" class="" title="eq0F not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="eq0F" class="id"><a name="eq0F" class="" title="eq0F :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i),
+interval_inference.unify (fun ix iy : Itv.t => ~~ Itv.sub ix iy)
+  (Itv.Real `[0%Z, 0%Z]%R) i ->
+(x%:num%R == 0%R :> R) = false
+
+eq0F is not universe polymorphic
+Arguments eq0F {R i} x {_}
+eq0F is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.eq0F
+Declared in
+library mathcomp.algebra.interval_inference, line 633, characters 6-10
 ">eq0F</a></span><span class="id"> </span><span id="x:145" class="id"><a name="x:145" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:145">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#28a3089bb29d95d7bdc98c2c73b31552"> ==</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#28a3089bb29d95d7bdc98c2c73b31552"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.x0">x0</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#28a3089bb29d95d7bdc98c2c73b31552"> :&gt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#28a3089bb29d95d7bdc98c2c73b31552"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Theory.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -809,7 +926,17 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="id"> exact/</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#val_inj">val_inj</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="posE" class="id"><a name="posE" class="" title="posE not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="posE" class="id"><a name="posE" class="" title="posE :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i)
+  {uni : unify_itv i (Itv.Real `]0%Z, +oo[%R)},
+(widen_itv (x%:num)%:itv)%:posnum%R = x%:num%R
+
+posE is not universe polymorphic
+Arguments posE {R i} x {uni}
+posE is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.posE
+Declared in
+library mathcomp.algebra.interval_inference, line 669, characters 6-10
 ">posE</a></span> (<span id="x:158" class="id"><a name="x:158" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#sT">sT</a></span>) (<span id="unz:159" class="id"><a name="unz:159" class="">unz</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span>) (<span id="ucond:160" class="id"><a name="ucond:160" class="">ucond</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="mathcomp.reals.signed.html#widen_signed">widen_signed</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:158">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="mathcomp.reals.signed.html#ad3328f50701157edb27861836280ff9">%:sgn</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unz:159">unz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#ucond:160">ucond</a></span>)<span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:158">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>.<br/>
 <details>
@@ -817,7 +944,17 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="nngE" class="id"><a name="nngE" class="" title="nngE not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="nngE" class="id"><a name="nngE" class="" title="nngE :
+forall {R : numDomainType} {i : Itv.t} (x : Itv.def (Itv.num_sem (R:=R)) i)
+  {uni : unify_itv i (Itv.Real `[0%Z, +oo[%R)},
+(widen_itv (x%:num)%:itv)%:nngnum%R = x%:num%R
+
+nngE is not universe polymorphic
+Arguments nngE {R i} x {uni}
+nngE is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.nngE
+Declared in
+library mathcomp.algebra.interval_inference, line 673, characters 6-10
 ">nngE</a></span> (<span id="x:161" class="id"><a name="x:161" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#sT">sT</a></span>) (<span id="unz:162" class="id"><a name="unz:162" class="">unz</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#bc1ebd4038e9d7afd4fc6aff32c3dd9a">?</a></span><span class="id">=0</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span>) (<span id="ucond:163" class="id"><a name="ucond:163" class="">ucond</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span>)<span class="id"> :</span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="mathcomp.reals.signed.html#widen_signed">widen_signed</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:161">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="mathcomp.reals.signed.html#ad3328f50701157edb27861836280ff9">%:sgn</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unz:162">unz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#ucond:163">ucond</a></span>)<span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:161">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>.<br/>
 <details>
@@ -1526,31 +1663,75 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#sT">sT</a></span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Notation</span><span class="id"> </span><span id="num" class="id"><a name="num" class="">num</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Morph.x0">x0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Morph.nz">nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Morph.cond">cond</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_eq" class="id"><a name="num_eq" class="" title="num_eq not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_eq" class="id"><a name="num_eq" class="" title="num_eq :
+forall {R : numDomainType} {i : Itv.t}, {mono num : x y / x == y >-> x == y}
+
+num_eq is not universe polymorphic
+Arguments num_eq {R i} x y
+num_eq is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_eq
+Declared in
+library mathcomp.algebra.interval_inference, line 1462, characters 6-12
 ">num_eq</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">{mono</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="x:473" class="id"><span id="x:471" class="id"><a name="x:473" class="">x</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="y:474" class="id"><span id="y:472" class="id"><a name="y:474" class="">y</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> /</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:471">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:472">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">}</a></span><br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le" class="id"><a name="num_le" class="" title="num_le not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le" class="id"><a name="num_le" class="" title="num_le :
+forall {R : numDomainType} {i : Itv.t},
+{mono num : x y / (x <= y)%R >-> (x <= y)%R}
+
+num_le is not universe polymorphic
+Arguments num_le {R i} x y
+num_le is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_le
+Declared in
+library mathcomp.algebra.interval_inference, line 1463, characters 6-12
 ">num_le</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">{mono</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="x:477" class="id"><span id="x:475" class="id"><a name="x:477" class="">x</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="y:478" class="id"><span id="y:476" class="id"><a name="y:478" class="">y</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> /</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:475">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#4a718365fe6d60a4322f996a7adbd575"> &lt;=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#4a718365fe6d60a4322f996a7adbd575"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:476">y</a></span>)<span class="id">%O</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">}</a></span><br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt" class="id"><a name="num_lt" class="" title="num_lt not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt" class="id"><a name="num_lt" class="" title="num_lt :
+forall {R : numDomainType} {i : Itv.t},
+{mono num : x y / (x < y)%R >-> (x < y)%R}
+
+num_lt is not universe polymorphic
+Arguments num_lt {R i} x y
+num_lt is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_lt
+Declared in
+library mathcomp.algebra.interval_inference, line 1464, characters 6-12
 ">num_lt</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">{mono</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="x:481" class="id"><span id="x:479" class="id"><a name="x:481" class="">x</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> </a></span><span id="y:482" class="id"><span id="y:480" class="id"><a name="y:482" class="">y</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088"> /</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:479">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.PreOSyntax.::order_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:480">y</a></span>)<span class="id">%O</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#02b248fee5f27b186ea3a36733c25088">}</a></span><br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> []</span>. Qed.</div></details>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_min" class="id"><a name="num_min" class="" title="num_min not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_min" class="id"><a name="num_min" class="" title="num_min :
+forall {R : numDomainType} {i : Itv.t},
+{morph num : x y / Num.min x y >-> Num.min x y}
+
+num_min is not universe polymorphic
+Arguments num_min {R i} x y
+num_min is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_min
+Declared in
+library mathcomp.algebra.interval_inference, line 1465, characters 6-13
 ">num_min</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01">{morph</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span id="x:485" class="id"><span id="x:483" class="id"><a name="x:485" class="">x</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span id="y:486" class="id"><span id="y:484" class="id"><a name="y:486" class="">y</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> /</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.min">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:483">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:484">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01">}</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> x</span><span class="id"> y;</span><span class="id"> rewrite</span><span class="id"> !</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.minEle">minEle</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#num_le">num_le</a></span><span class="id"> -</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#fun_if">fun_if</a></span>. Qed.</div></details>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_max" class="id"><a name="num_max" class="" title="num_max not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_max" class="id"><a name="num_max" class="" title="num_max :
+forall {R : numDomainType} {i : Itv.t},
+{morph num : x y / Num.max x y >-> Num.max x y}
+
+num_max is not universe polymorphic
+Arguments num_max {R i} x y
+num_max is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_max
+Declared in
+library mathcomp.algebra.interval_inference, line 1467, characters 6-13
 ">num_max</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01">{morph</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> :</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span id="x:489" class="id"><span id="x:487" class="id"><a name="x:489" class="">x</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span id="y:490" class="id"><span id="y:488" class="id"><a name="y:490" class="">y</a></span></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> /</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01"> </a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.max">Order</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.order.preorder#Order.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:487">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:488">y</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#e69c60b553f06d3463460a9f4cee3c01">}</a></span>.<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1565,7 +1746,16 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="id"> Types</span> (<span class="id">a</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphNum.R">R</a></span>) (<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#nR">nR</a></span>).<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Notation</span><span class="id"> </span><span id="num" class="id"><a name="num" class="">num</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"> _</span><span class="id"> _</span> (<span class="id">0</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphNum.R">R</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphNum.nz">nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphNum.cond">cond</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_eq0" class="id"><a name="num_abs_eq0" class="" title="num_abs_eq0 not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_eq0" class="id"><a name="num_abs_eq0" class="" title="num_abs_eq0 :
+forall {R : numDomainType} (a : R),
+(widen_itv `|a|%:itv%R == widen_itv 0%:itv%R :> {nonneg R}%R) = (a == 0%R)
+
+num_abs_eq0 is not universe polymorphic
+Arguments num_abs_eq0 {R} a%ring_scope
+num_abs_eq0 is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_abs_eq0
+Declared in
+library mathcomp.algebra.interval_inference, line 1475, characters 6-17
 ">num_abs_eq0</a></span><span class="id"> </span><span id="a:494" class="id"><a name="a:494" class="">a</a></span><span class="id"> :</span> (<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">`|</a></span><span class="id"><a href="mathcomp.reals.signed.html#a:494">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">|</a></span><span class="id"><a href="mathcomp.reals.signed.html#47ac4d6dece4689d4a3505486f61da27">%:nng</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0</span><span class="id"><a href="mathcomp.reals.signed.html#47ac4d6dece4689d4a3505486f61da27">%:nng</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:494">a</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0</span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1580,7 +1770,16 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="gallina-kwd"> Type</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#nR">nR</a></span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Notation</span><span class="id"> </span><span id="num" class="id"><a name="num" class="">num</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"> _</span><span class="id"> _</span> (<span class="id">0</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphReal.R">R</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphReal.nz">nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphReal.r">r</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le_max" class="id"><a name="num_le_max" class="" title="num_le_max not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le_max" class="id"><a name="num_le_max" class="" title="num_le_max :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(a <= Num.max x%:num y%:num)%R = (a <= x%:num)%R || (a <= y%:num)%R
+
+num_le_max is not universe polymorphic
+Arguments num_le_max {R i} a x y
+num_le_max is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_le_max
+Declared in
+library mathcomp.algebra.interval_inference, line 1486, characters 6-16
 ">num_le_max</a></span><span class="id"> </span><span id="a:498" class="id"><a name="a:498" class="">a</a></span><span class="id"> </span><span id="x:499" class="id"><a name="x:499" class="">x</a></span><span class="id"> </span><span id="y:500" class="id"><a name="y:500" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#a:498">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:499">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:500">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:498">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:499">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"> ||</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:498">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:500">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
@@ -1588,7 +1787,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_le_max">comparable_le_max</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_ge_max" class="id"><a name="num_ge_max" class="" title="num_ge_max not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_ge_max" class="id"><a name="num_ge_max" class="" title="num_ge_max :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(Num.max x%:num y%:num <= a)%R = (x%:num <= a)%R && (y%:num <= a)%R
+
+num_ge_max is not universe polymorphic
+Arguments num_ge_max {R i} a x y
+num_ge_max is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_ge_max
+Declared in
+library mathcomp.algebra.interval_inference, line 1490, characters 6-16
 ">num_ge_max</a></span><span class="id"> </span><span id="a:501" class="id"><a name="a:501" class="">a</a></span><span class="id"> </span><span id="x:502" class="id"><a name="x:502" class="">x</a></span><span class="id"> </span><span id="y:503" class="id"><a name="y:503" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:502">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:503">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:501">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:502">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:501">a</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#y:503">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:501">a</a></span>).<br/>
 <details>
@@ -1596,7 +1804,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_ge_max">comparable_ge_max</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le_min" class="id"><a name="num_le_min" class="" title="num_le_min not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_le_min" class="id"><a name="num_le_min" class="" title="num_le_min :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(a <= Num.min x%:num y%:num)%R = (a <= x%:num)%R && (a <= y%:num)%R
+
+num_le_min is not universe polymorphic
+Arguments num_le_min {R i} a x y
+num_le_min is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_le_min
+Declared in
+library mathcomp.algebra.interval_inference, line 1494, characters 6-16
 ">num_le_min</a></span><span class="id"> </span><span id="a:504" class="id"><a name="a:504" class="">a</a></span><span class="id"> </span><span id="x:505" class="id"><a name="x:505" class="">x</a></span><span class="id"> </span><span id="y:506" class="id"><a name="y:506" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#a:504">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:505">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:506">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:504">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:505">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:504">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:506">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
@@ -1604,7 +1821,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_le_min">comparable_le_min</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_ge_min" class="id"><a name="num_ge_min" class="" title="num_ge_min not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_ge_min" class="id"><a name="num_ge_min" class="" title="num_ge_min :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(Num.min x%:num y%:num <= a)%R = (x%:num <= a)%R || (y%:num <= a)%R
+
+num_ge_min is not universe polymorphic
+Arguments num_ge_min {R i} a x y
+num_ge_min is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_ge_min
+Declared in
+library mathcomp.algebra.interval_inference, line 1498, characters 6-16
 ">num_ge_min</a></span><span class="id"> </span><span id="a:507" class="id"><a name="a:507" class="">a</a></span><span class="id"> </span><span id="x:508" class="id"><a name="x:508" class="">x</a></span><span class="id"> </span><span id="y:509" class="id"><a name="y:509" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:508">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:509">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:507">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:508">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:507">a</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"> ||</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#y:509">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:507">a</a></span>).<br/>
 <details>
@@ -1612,7 +1838,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_ge_min">comparable_ge_min</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt_max" class="id"><a name="num_lt_max" class="" title="num_lt_max not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt_max" class="id"><a name="num_lt_max" class="" title="num_lt_max :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(a < Num.max x%:num y%:num)%R = (a < x%:num)%R || (a < y%:num)%R
+
+num_lt_max is not universe polymorphic
+Arguments num_lt_max {R i} a x y
+num_lt_max is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_lt_max
+Declared in
+library mathcomp.algebra.interval_inference, line 1502, characters 6-16
 ">num_lt_max</a></span><span class="id"> </span><span id="a:510" class="id"><a name="a:510" class="">a</a></span><span class="id"> </span><span id="x:511" class="id"><a name="x:511" class="">x</a></span><span class="id"> </span><span id="y:512" class="id"><a name="y:512" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#a:510">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:511">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:512">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:510">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:511">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"> ||</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:510">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:512">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
@@ -1620,7 +1855,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_lt_max">comparable_lt_max</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_gt_max" class="id"><a name="num_gt_max" class="" title="num_gt_max not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_gt_max" class="id"><a name="num_gt_max" class="" title="num_gt_max :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(Num.max x%:num y%:num < a)%R = (x%:num < a)%R && (y%:num < a)%R
+
+num_gt_max is not universe polymorphic
+Arguments num_gt_max {R i} a x y
+num_gt_max is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_gt_max
+Declared in
+library mathcomp.algebra.interval_inference, line 1506, characters 6-16
 ">num_gt_max</a></span><span class="id"> </span><span id="a:513" class="id"><a name="a:513" class="">a</a></span><span class="id"> </span><span id="x:514" class="id"><a name="x:514" class="">x</a></span><span class="id"> </span><span id="y:515" class="id"><a name="y:515" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:514">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span> <span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:515">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:513">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:514">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:513">a</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#y:515">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:513">a</a></span>).<br/>
 <details>
@@ -1628,7 +1872,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_gt_max">comparable_gt_max</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt_min" class="id"><a name="num_lt_min" class="" title="num_lt_min not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_lt_min" class="id"><a name="num_lt_min" class="" title="num_lt_min :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(a < Num.min x%:num y%:num)%R = (a < x%:num)%R && (a < y%:num)%R
+
+num_lt_min is not universe polymorphic
+Arguments num_lt_min {R i} a x y
+num_lt_min is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_lt_min
+Declared in
+library mathcomp.algebra.interval_inference, line 1510, characters 6-16
 ">num_lt_min</a></span><span class="id"> </span><span id="a:516" class="id"><a name="a:516" class="">a</a></span><span class="id"> </span><span id="x:517" class="id"><a name="x:517" class="">x</a></span><span class="id"> </span><span id="y:518" class="id"><a name="y:518" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#a:516">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:517">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:518">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:516">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:517">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:516">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#y:518">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
@@ -1636,7 +1889,16 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.comparable_lt_min">comparable_lt_min</a></span><span class="id">//</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.real_comparable">real_comparable</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_gt_min" class="id"><a name="num_gt_min" class="" title="num_gt_min not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_gt_min" class="id"><a name="num_gt_min" class="" title="num_gt_min :
+forall {R : numDomainType} {i : interval int} (a : R) (x y : {itv R & i}),
+(Num.min x%:num y%:num < a)%R = (x%:num < a)%R || (y%:num < a)%R
+
+num_gt_min is not universe polymorphic
+Arguments num_gt_min {R i} a x y
+num_gt_min is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_gt_min
+Declared in
+library mathcomp.algebra.interval_inference, line 1514, characters 6-16
 ">num_gt_min</a></span><span class="id"> </span><span id="a:519" class="id"><a name="a:519" class="">a</a></span><span class="id"> </span><span id="x:520" class="id"><a name="x:520" class="">x</a></span><span class="id"> </span><span id="y:521" class="id"><a name="y:521" class="">y</a></span><span class="id"> :</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:520">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#y:521">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:519">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:520">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:519">a</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"> ||</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#y:521">y</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:519">a</a></span>).<br/>
 <details>
@@ -1652,14 +1914,39 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="gallina-kwd"> Type</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#nR">nR</a></span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Notation</span><span class="id"> </span><span id="num" class="id"><a name="num" class="">num</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.reals.signed.html#num">num</a></span><span class="id"> _</span><span class="id"> _</span> (<span class="id">0</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#MorphGe0.R">R</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#bc1ebd4038e9d7afd4fc6aff32c3dd9a">?</a></span><span class="id">=0</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span>).<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_le" class="id"><a name="num_abs_le" class="" title="num_abs_le not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_le" class="id"><a name="num_abs_le" class="" title="num_abs_le :
+forall {R : numDomainType}
+  [a : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
+         R]
+  (x : {itv R & `[0%Z, +oo[%R}),
+(0 <= a)%R ->
+((widen_itv `|a|%:itv : {nonneg R}) <= x)%R = (a <= x%:nngnum)%R
+
+num_abs_le is not universe polymorphic
+Arguments num_abs_le {R} [a] x _
+num_abs_le is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_abs_le
+Declared in
+library mathcomp.algebra.interval_inference, line 1526, characters 6-16
 ">num_abs_le</a></span><span class="id"> </span><span id="a:524" class="id"><a name="a:524" class="">a</a></span><span class="id"> </span><span id="x:525" class="id"><a name="x:525" class="">x</a></span><span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:524">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span> (<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">`|</a></span><span class="id"><a href="mathcomp.reals.signed.html#a:524">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">|</a></span><span class="id"><a href="mathcomp.reals.signed.html#47ac4d6dece4689d4a3505486f61da27">%:nng</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:525">x</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:524">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:525">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> move=&gt;</span><span class="id"> a0;</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="mathcomp.reals.signed.html#num_le">num_le</a></span><span class="id">//=</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ger0_norm">ger0_norm</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_lt" class="id"><a name="num_abs_lt" class="" title="num_abs_lt not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="num_abs_lt" class="id"><a name="num_abs_lt" class="" title="num_abs_lt :
+forall {R : numDomainType}
+  [a : join_Num_POrderedZmodule_between_Algebra_BaseAddUMagma_and_Order_Preorder
+         R]
+  (x : {itv R & `[0%Z, +oo[%R}),
+(0 <= a)%R -> ((widen_itv `|a|%:itv : {nonneg R}) < x)%R = (a < x%:nngnum)%R
+
+num_abs_lt is not universe polymorphic
+Arguments num_abs_lt {R} [a] x _
+num_abs_lt is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.num_abs_lt
+Declared in
+library mathcomp.algebra.interval_inference, line 1529, characters 6-16
 ">num_abs_lt</a></span><span class="id"> </span><span id="a:526" class="id"><a name="a:526" class="">a</a></span><span class="id"> </span><span id="x:527" class="id"><a name="x:527" class="">x</a></span><span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#a:526">a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span> (<span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">`|</a></span><span class="id"><a href="mathcomp.reals.signed.html#a:526">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#55297ec87c6b3f98c14c99daeafb55d3">|</a></span><span class="id"><a href="mathcomp.reals.signed.html#47ac4d6dece4689d4a3505486f61da27">%:nng</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:527">x</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#a:526">a</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:527">x</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1669,16 +1956,39 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Section</span><span class="id"> Posnum</span>.<br/>
 <span class="vernacular">Context</span> (<span id="Posnum.R" class="id"><a name="Posnum.R" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span>) (<span id="Posnum.x" class="id"><a name="Posnum.x" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#R:528">R</a></span>) (<span id="Posnum.x_gt0" class="id"><a name="Posnum.x_gt0" class="">x_gt0</a></span><span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:529">x</a></span>).<br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="posnum_subdef" class="id"><a name="posnum_subdef" class="" title="posnum_subdef not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="posnum_subdef" class="id"><a name="posnum_subdef" class="" title="posnum_subdef :
+forall [R : numDomainType] [x : R],
+(0 < x)%R -> Itv.spec (Itv.num_sem (R:=R)) (Itv.Real `]0, +oo[%R) x
+
+posnum_subdef is not universe polymorphic
+Arguments posnum_subdef [R] [x]%ring_scope x_gt0
+posnum_subdef is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.posnum_subdef
+Declared in
+library mathcomp.algebra.interval_inference, line 1565, characters 6-19
 ">posnum_subdef</a></span><span class="id"> :</span> (<span class="id"><a href="mathcomp.reals.signed.html#Posnum.x">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> !=</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#c385a484ee9d1b4e0615924561a9b75e"> </a></span><span class="id">0</span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id">0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Posnum.x">x</a></span>)<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="NOTFOUND the module url for mathcomp.order.order#Order.POrderTheory.lt_def">lt_def</a></span>. Qed.</div></details>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="PosNum" class="id"><a name="PosNum" class="" title="PosNum not a defined object.
+<span class="vernacular">Definition</span><span class="id"> </span><span id="PosNum" class="id"><a name="PosNum" class="" title="PosNum : forall [R : numDomainType] [x : R], (0 < x)%R -> {posnum R}%R
+
+PosNum is not universe polymorphic
+Arguments PosNum [R] [x]%ring_scope x_gt0
+PosNum is transparent
+Expands to: Constant mathcomp.algebra.interval_inference.PosNum
+Declared in
+library mathcomp.algebra.interval_inference, line 1567, characters 11-17
 ">PosNum</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8">{posnum</a></span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#Posnum.R">R</a></span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8">}</a></span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="mathcomp.reals.signed.html#mk">Signed</a></span>.<span class="id"><a href="mathcomp.reals.signed.html#mk">mk</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> 0</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#5e27fe60fda0a7fe6124229ec9350cb6">!=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> _</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#posnum_subdef">posnum_subdef</a></span>.<br/>
 <span class="vernacular">End</span><span class="id"> Posnum</span>.<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="NngNum" class="id"><a name="NngNum" class="" title="NngNum not a defined object.
+<span class="vernacular">Definition</span><span class="id"> </span><span id="NngNum" class="id"><a name="NngNum" class="" title="NngNum : forall [R : numDomainType] [x : R], (0 <= x)%R -> {nonneg R}%R
+
+NngNum is not universe polymorphic
+Arguments NngNum [R] [x]%ring_scope x_ge0
+NngNum is transparent
+Expands to: Constant mathcomp.algebra.interval_inference.NngNum
+Declared in
+library mathcomp.algebra.interval_inference, line 1574, characters 11-17
 ">NngNum</a></span> (<span id="R:531" class="id"><a name="R:531" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span>) (<span id="x:532" class="id"><a name="x:532" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#R:531">R</a></span>) (<span id="x_ge0:533" class="id"><a name="x_ge0:533" class="">x_ge0</a></span><span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:532">x</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3">{nonneg</a></span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#R:531">R</a></span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3">}</a></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;(<span class="id">@</span><span class="id"><a href="mathcomp.reals.signed.html#mk">Signed</a></span>.<span class="id"><a href="mathcomp.reals.signed.html#mk">mk</a></span><span class="id"> _</span><span class="id"> _</span><span class="id"> 0</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#bc1ebd4038e9d7afd4fc6aff32c3dd9a">?</a></span><span class="id">=0</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#f1caef69e1bef41a6b6764969723a144">&gt;=0</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:532">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x_ge0:533">x_ge0</a></span>).<br/>
 <br/>
@@ -1686,7 +1996,16 @@ Qed.</div></details>
 &nbsp;&nbsp;<span class="id">R</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#bool">bool</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#bool">bool</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#bool">bool</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="gallina-kwd"> Type</span><span class="id"> :=</span><br/>
 <span class="id">|</span><span class="id"> </span><span id="IsPosnum" class="id"><a name="IsPosnum" class="">IsPosnum</a></span> (<span id="p:538" class="id"><a name="p:538" class="">p</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8">{posnum</a></span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#R:534">R</a></span><span class="id"><a href="mathcomp.reals.signed.html#dbe4e9c6d047a7b9bacd3b6dee92ccb8">}</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#posnum_spec:536">posnum_spec</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:535">x</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#p:538">p</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#false">false</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#true">true</a></span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#true">true</a></span>.<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="posnumP" class="id"><a name="posnumP" class="" title="posnumP not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="posnumP" class="id"><a name="posnumP" class="" title="posnumP :
+forall [R : numDomainType] [x : R],
+(0 < x)%R -> posnum_spec (R:=R) x x (x == 0%R) (0 <= x)%R (0 < x)%R
+
+posnumP is not universe polymorphic
+Arguments posnumP [R] [x]%ring_scope _
+posnumP is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.posnumP
+Declared in
+library mathcomp.algebra.interval_inference, line 1581, characters 6-13
 ">posnumP</a></span> (<span id="R:539" class="id"><a name="R:539" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span>) (<span id="x:540" class="id"><a name="x:540" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#R:539">R</a></span>)<span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#posnum_spec">posnum_spec</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0</span>) (<span class="id">0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span>) (<span class="id">0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> &lt;</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#Num.Syntax.::ring_scope:x_'&lt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:540">x</a></span>).<br/>
 <details>
@@ -1699,7 +2018,16 @@ Qed.</div></details>
 <span class="vernacular">CoInductive</span><span class="id"> </span><span id="nonneg_spec" class="id"><a name="nonneg_spec" class="">nonneg_spec</a></span> (<span id="R:541" class="id"><a name="R:541" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span>) (<span id="x:542" class="id"><a name="x:542" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#R:541">R</a></span>)<span class="id"> :</span><span class="id"> R</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#bool">bool</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="gallina-kwd"> Type</span><span class="id"> :=</span><br/>
 <span class="id">|</span><span class="id"> </span><span id="IsNonneg" class="id"><a name="IsNonneg" class="">IsNonneg</a></span> (<span id="p:545" class="id"><a name="p:545" class="">p</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3">{nonneg</a></span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#R:541">R</a></span><span class="id"><a href="mathcomp.reals.signed.html#3c7df47245b1421bbe9c31d0c8ed78f3">}</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#nonneg_spec:543">nonneg_spec</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:542">x</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#p:545">p</a></span><span class="id"><a href="mathcomp.reals.signed.html#20b994ad55d82706ad5e372c6977614b">%:num</a></span>)<span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#true">true</a></span>.<br/>
 <br/>
-<span class="vernacular">Lemma</span><span class="id"> </span><span id="nonnegP" class="id"><a name="nonnegP" class="" title="nonnegP not a defined object.
+<span class="vernacular">Lemma</span><span class="id"> </span><span id="nonnegP" class="id"><a name="nonnegP" class="" title="nonnegP :
+forall [R : numDomainType] [x : R],
+(0 <= x)%R -> nonneg_spec (R:=R) x x (0 <= x)%R
+
+nonnegP is not universe polymorphic
+Arguments nonnegP [R] [x]%ring_scope _
+nonnegP is opaque
+Expands to: Constant mathcomp.algebra.interval_inference.nonnegP
+Declared in
+library mathcomp.algebra.interval_inference, line 1591, characters 6-13
 ">nonnegP</a></span> (<span id="R:546" class="id"><a name="R:546" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span>) (<span id="x:547" class="id"><a name="x:547" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#R:546">R</a></span>)<span class="id"> :</span><span class="id"> 0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:547">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#nonneg_spec">nonneg_spec</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:547">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:547">x</a></span> (<span class="id">0</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> &lt;=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_4_0/mathcomp.algebra.num_theory.orderedzmod.html#cb42ec59ad57b25928e1718b4e69e031"> </a></span><span class="id"><a href="mathcomp.reals.signed.html#x:547">x</a></span>).<br/>
 <details>
 <summary class="toggleproof">Proof.</summary>

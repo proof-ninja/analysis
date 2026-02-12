@@ -1146,61 +1146,66 @@ Qed.</div></details>
 Qed.</div></details>
 <br/>
 <span id="HB_unnamed_factory_21" class="id"><a name="HB_unnamed_factory_21" class="" title="HB_unnamed_factory_21 :
-forall [eT : Type] [fT : finType] [f : eT -> fT] [g : fT -> option eT]
-  (fK : pcancel f g),
-isFinite.axioms_ (pcan_type (f:=f) (g:=g) fK)
-  (eqtype.HB_unnamed_mixin_14 (eT:=fT) (f:=f) (g:=g) fK)
+forall [R : nzRingType] [U U' : lmodType R]
+  [V : GRing.Zmodule.Exports.zmodType] [s s' : R -> V -> V]
+  (f : {bilinear U -> U' -> V | s & s'}%R) (z : U'),
+GRing.isScalable.axioms_ R U V s (applyr f z)
 
 HB_unnamed_factory_21 is not universe polymorphic
-Arguments HB_unnamed_factory_21 [eT]%type_scope [fT] [f g]%function_scope fK
+Arguments HB_unnamed_factory_21 [R U U' V] [s s']%function_scope 
+  f z%ring_scope
 HB_unnamed_factory_21 is transparent
-Expands to: Constant mathcomp.boot.fintype.HB_unnamed_factory_21
-Declared in library mathcomp.boot.fintype, line 1426, characters 0-140
+Expands to: Constant mathcomp.algebra.sesquilinear.HB_unnamed_factory_21
+Declared in library mathcomp.algebra.sesquilinear, line 326, characters 0-110
 ">HB</a></span>.<span id="HB_unnamed_factory_21" class="id"><a name="HB_unnamed_factory_21" class="" title="HB_unnamed_factory_21 :
-forall [eT : Type] [fT : finType] [f : eT -> fT] [g : fT -> option eT]
-  (fK : pcancel f g),
-isFinite.axioms_ (pcan_type (f:=f) (g:=g) fK)
-  (eqtype.HB_unnamed_mixin_14 (eT:=fT) (f:=f) (g:=g) fK)
+forall [R : nzRingType] [U U' : lmodType R]
+  [V : GRing.Zmodule.Exports.zmodType] [s s' : R -> V -> V]
+  (f : {bilinear U -> U' -> V | s & s'}%R) (z : U'),
+GRing.isScalable.axioms_ R U V s (applyr f z)
 
 HB_unnamed_factory_21 is not universe polymorphic
-Arguments HB_unnamed_factory_21 [eT]%type_scope [fT] [f g]%function_scope fK
+Arguments HB_unnamed_factory_21 [R U U' V] [s s']%function_scope 
+  f z%ring_scope
 HB_unnamed_factory_21 is transparent
-Expands to: Constant mathcomp.boot.fintype.HB_unnamed_factory_21
-Declared in library mathcomp.boot.fintype, line 1426, characters 0-140
+Expands to: Constant mathcomp.algebra.sesquilinear.HB_unnamed_factory_21
+Declared in library mathcomp.algebra.sesquilinear, line 326, characters 0-110
 ">instance</a></span><span class="vernacular"> Definition</span><span id="HB_unnamed_factory_21" class="id"><a name="HB_unnamed_factory_21" class="" title="HB_unnamed_factory_21 :
-forall [eT : Type] [fT : finType] [f : eT -> fT] [g : fT -> option eT]
-  (fK : pcancel f g),
-isFinite.axioms_ (pcan_type (f:=f) (g:=g) fK)
-  (eqtype.HB_unnamed_mixin_14 (eT:=fT) (f:=f) (g:=g) fK)
+forall [R : nzRingType] [U U' : lmodType R]
+  [V : GRing.Zmodule.Exports.zmodType] [s s' : R -> V -> V]
+  (f : {bilinear U -> U' -> V | s & s'}%R) (z : U'),
+GRing.isScalable.axioms_ R U V s (applyr f z)
 
 HB_unnamed_factory_21 is not universe polymorphic
-Arguments HB_unnamed_factory_21 [eT]%type_scope [fT] [f g]%function_scope fK
+Arguments HB_unnamed_factory_21 [R U U' V] [s s']%function_scope 
+  f z%ring_scope
 HB_unnamed_factory_21 is transparent
-Expands to: Constant mathcomp.boot.fintype.HB_unnamed_factory_21
-Declared in library mathcomp.boot.fintype, line 1426, characters 0-140
+Expands to: Constant mathcomp.algebra.sesquilinear.HB_unnamed_factory_21
+Declared in library mathcomp.algebra.sesquilinear, line 326, characters 0-110
 "> _</a></span><span id="HB_unnamed_factory_21" class="id"><a name="HB_unnamed_factory_21" class="" title="HB_unnamed_factory_21 :
-forall [eT : Type] [fT : finType] [f : eT -> fT] [g : fT -> option eT]
-  (fK : pcancel f g),
-isFinite.axioms_ (pcan_type (f:=f) (g:=g) fK)
-  (eqtype.HB_unnamed_mixin_14 (eT:=fT) (f:=f) (g:=g) fK)
+forall [R : nzRingType] [U U' : lmodType R]
+  [V : GRing.Zmodule.Exports.zmodType] [s s' : R -> V -> V]
+  (f : {bilinear U -> U' -> V | s & s'}%R) (z : U'),
+GRing.isScalable.axioms_ R U V s (applyr f z)
 
 HB_unnamed_factory_21 is not universe polymorphic
-Arguments HB_unnamed_factory_21 [eT]%type_scope [fT] [f g]%function_scope fK
+Arguments HB_unnamed_factory_21 [R U U' V] [s s']%function_scope 
+  f z%ring_scope
 HB_unnamed_factory_21 is transparent
-Expands to: Constant mathcomp.boot.fintype.HB_unnamed_factory_21
-Declared in library mathcomp.boot.fintype, line 1426, characters 0-140
+Expands to: Constant mathcomp.algebra.sesquilinear.HB_unnamed_factory_21
+Declared in library mathcomp.algebra.sesquilinear, line 326, characters 0-110
 "> :=</a></span><br/>
 &nbsp;&nbsp;<span id="HB_unnamed_factory_21" class="id"><a name="HB_unnamed_factory_21" class="" title="HB_unnamed_factory_21 :
-forall [eT : Type] [fT : finType] [f : eT -> fT] [g : fT -> option eT]
-  (fK : pcancel f g),
-isFinite.axioms_ (pcan_type (f:=f) (g:=g) fK)
-  (eqtype.HB_unnamed_mixin_14 (eT:=fT) (f:=f) (g:=g) fK)
+forall [R : nzRingType] [U U' : lmodType R]
+  [V : GRing.Zmodule.Exports.zmodType] [s s' : R -> V -> V]
+  (f : {bilinear U -> U' -> V | s & s'}%R) (z : U'),
+GRing.isScalable.axioms_ R U V s (applyr f z)
 
 HB_unnamed_factory_21 is not universe polymorphic
-Arguments HB_unnamed_factory_21 [eT]%type_scope [fT] [f g]%function_scope fK
+Arguments HB_unnamed_factory_21 [R U U' V] [s s']%function_scope 
+  f z%ring_scope
 HB_unnamed_factory_21 is transparent
-Expands to: Constant mathcomp.boot.fintype.HB_unnamed_factory_21
-Declared in library mathcomp.boot.fintype, line 1426, characters 0-140
+Expands to: Constant mathcomp.algebra.sesquilinear.HB_unnamed_factory_21
+Declared in library mathcomp.algebra.sesquilinear, line 326, characters 0-110
 ">@isContinuous</a></span>.<span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#isContinuous.Build">Build</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#subspace">subspace</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_fun_comp.A">A</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_fun_comp.Z">Z</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_fun_comp.g">g</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> \o</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_fun_comp.f">f</a></span>)<span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.subspace_topology.html#continuous_comp_subproof">continuous_comp_subproof</a></span>.<br/>
 <br/>
 <span class="vernacular">End</span><span class="id"> continuous_fun_comp</span>.<br/>

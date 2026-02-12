@@ -389,10 +389,9 @@ Qed.</div></details>
 <span class="vernacular">Variables</span> (<span id="bigmax_seq.r" class="id"><a name="bigmax_seq.r" class="">r</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.seq#seq">seq</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html#bigmax_seq.I">I</a></span>) (<span id="bigmax_seq.i0" class="id"><a name="bigmax_seq.i0" class="">i0</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html#bigmax_seq.I">I</a></span>) (<span id="bigmax_seq.P" class="id"><a name="bigmax_seq.P" class="">P</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#pred">pred</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html#bigmax_seq.I">I</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="le_bigmax_seq" class="id"><a name="le_bigmax_seq" class="" title="le_bigmax_seq :
-forall {disp : Order.disp_t} {T : orderType disp} 
-  {I : eqType} {r : seq I} (x : T) (i0 : I) (P : pred I) 
-  (F : I -> T),
-i0 \in r -> P i0 -> (F i0 <= \big[Order.Def.max/x]_(i <- r | P i) F i)%O
+forall {disp : disp_t} {T : orderType disp} {I : eqType} 
+  {r : seq I} (x : T) (i0 : I) (P : pred I) (F : I -> T),
+i0 \in r -> P i0 -> (F i0 <= \big[Def.max/x]_(i <- r | P i) F i)%O
 
 le_bigmax_seq is not universe polymorphic
 Arguments le_bigmax_seq {disp T I} {r}%seq_scope x i0 P F%function_scope _ _
@@ -410,11 +409,11 @@ Declared in library mathcomp.order.order, line 3212, characters 6-19
 Qed.</div></details>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="bigmax_sup_seq" class="id"><a name="bigmax_sup_seq" class="" title="bigmax_sup_seq :
-forall {disp : Order.disp_t} {T : orderType disp} 
-  {I : eqType} {r : seq I} (x : T) (i0 : I) (P : pred I) 
-  (t : T) (F : I -> T),
+forall {disp : disp_t} {T : orderType disp} {I : eqType} 
+  {r : seq I} (x : T) (i0 : I) (P : pred I) (t : T) 
+  (F : I -> T),
 i0 \in r ->
-P i0 -> (t <= F i0)%O -> (t <= \big[Order.Def.max/x]_(i <- r | P i) F i)%O
+P i0 -> (t <= F i0)%O -> (t <= \big[Def.max/x]_(i <- r | P i) F i)%O
 
 bigmax_sup_seq is not universe polymorphic
 Arguments bigmax_sup_seq {disp T I} {r}%seq_scope 
