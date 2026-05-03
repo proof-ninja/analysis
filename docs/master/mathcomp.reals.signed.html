@@ -839,13 +839,6 @@ Arguments KnownSign.wider_nullity (xnz ynz)%_snum_nullity_scope
 KnownSign.wider_nullity is transparent
 Expands to: Constant mathcomp.reals.signed.KnownSign.wider_nullity
 Declared in library mathcomp.reals.signed, line 215, characters 11-24
-KnownSign.wider_sign : KnownSign.sign -> KnownSign.sign -> bool
-
-KnownSign.wider_sign is not universe polymorphic
-Arguments KnownSign.wider_sign (xs ys)%_snum_sign_scope
-KnownSign.wider_sign is transparent
-Expands to: Constant mathcomp.reals.signed.KnownSign.wider_sign
-Declared in library mathcomp.reals.signed, line 221, characters 11-21
 </p></span></div></span><span class="id"> </span><span id="x:150" class="id"><a name="x:150" class="">x</a></span><span class="id"> </span><span id="nz':151" class="id"><a name="nz':151" class="">nz'</a></span><span class="id"> </span><span id="cond':152" class="id"><a name="cond':152" class="">cond'</a></span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span id="unz:153" class="id"><a name="unz:153" class="">unz</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_nz">unify_nz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#nz':151">nz'</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.nz">nz</a></span>) (<span id="ucond:154" class="id"><a name="ucond:154" class="">ucond</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unify_r">unify_r</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#cond':152">cond'</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#Theory.cond">cond</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.reals.signed.html#mk">Signed</a></span>.<span class="id"><a href="mathcomp.reals.signed.html#mk">mk</a></span> (<span class="id"><a href="mathcomp.reals.signed.html#widen_signed_subproof">widen_signed_subproof</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#x:150">x</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#unz:153">unz</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#ucond:154">ucond</a></span>).<br/>
@@ -937,7 +930,14 @@ Declared in library mathcomp.reals.signed, line 221, characters 11-21
 <span class="vernacular">Section</span><span class="id"> POrderStability</span>.<br/>
 <span class="vernacular">Context</span><span class="id"> {</span><span id="POrderStability.disp" class="id"><a name="POrderStability.disp" class="">disp</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.disp_t">Order</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.disp_t">disp_t</a></span><span class="id">}</span><span class="id"> {</span><span id="POrderStability.T" class="id"><a name="POrderStability.T" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrder.Exports.porderType">porderType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#disp:170">disp</a></span><span class="id">}</span><span class="id"> {</span><span id="POrderStability.x0" class="id"><a name="POrderStability.x0" class="">x0</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.signed.html#T:171">T</a></span><span class="id">}</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="min_nonzero_subdef" class="id"><div name="min_nonzero_subdef" class=" tooltip">min_nonzero_subdef<span class='tooltip-area'><p>KnownSign.wider_real : KnownSign.real -> KnownSign.real -> bool
+<span class="vernacular">Definition</span><span class="id"> </span><span id="min_nonzero_subdef" class="id"><div name="min_nonzero_subdef" class=" tooltip">min_nonzero_subdef<span class='tooltip-area'><p>KnownSign.wider_sign : KnownSign.sign -> KnownSign.sign -> bool
+
+KnownSign.wider_sign is not universe polymorphic
+Arguments KnownSign.wider_sign (xs ys)%_snum_sign_scope
+KnownSign.wider_sign is transparent
+Expands to: Constant mathcomp.reals.signed.KnownSign.wider_sign
+Declared in library mathcomp.reals.signed, line 221, characters 11-21
+KnownSign.wider_real : KnownSign.real -> KnownSign.real -> bool
 
 KnownSign.wider_real is not universe polymorphic
 Arguments KnownSign.wider_real xr yr
