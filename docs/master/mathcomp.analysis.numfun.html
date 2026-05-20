@@ -1575,6 +1575,14 @@ Arguments itv_partitionL {d T} s%_seq_scope c
 itv_partitionL is transparent
 Expands to: Constant mathcomp.analysis.numfun.itv_partitionL
 Declared in library mathcomp.analysis.numfun, line 176, characters 11-25
+itv_partitionR :
+forall {d : Order.disp_t} {T : porderType d}, seq T -> T -> seq T
+
+itv_partitionR is not universe polymorphic
+Arguments itv_partitionR {d T} s%_seq_scope c
+itv_partitionR is transparent
+Expands to: Constant mathcomp.analysis.numfun.itv_partitionR
+Declared in library mathcomp.analysis.numfun, line 179, characters 11-25
 </p></span></div></span><span class="id"> {</span><span id="T:455" class="id"><a name="T:455" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="R:456" class="id"><a name="R:456" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#GRing.PzRing.Exports.pzRingType">pzRingType</a></span><span class="id">}</span> (<span id="A:457" class="id"><a name="A:457" class="">A</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#T:455">T</a></span>) (<span id="x:458" class="id"><a name="x:458" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#T:455">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#R:456">R</a></span><span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.numfun.html#x:458">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b09457274bcb94927e289b8a9e9cd3f7"> \in</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#b09457274bcb94927e289b8a9e9cd3f7"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#A:457">A</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#6411ed08724033ae48d2865f0380d533">%:R</a></span>.<br/>
 <span class="vernacular">Reserved</span><span class="vernacular"> Notation</span> <span class="id">&quot;'\1_' A&quot;</span> (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 8,</span><span class="id"> A</span><span class="gallina-kwd"> at</span><span class="id"> level</span><span class="id"> 2,</span><span class="id"> format</span> <span class="id">&quot;'\1_' A&quot;</span>) .<br/>
 <span class="vernacular">Notation</span> <span id="e353122e03268a6eab33cb5af81dd3c6" class="id"><a name="e353122e03268a6eab33cb5af81dd3c6" class="">&quot;'\1_' A&quot;</a></span><span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.numfun.html#indic">indic</a></span><span class="id"> A</span>)<span class="id"> :</span><span class="id"> ring_scope</span>.<br/>
@@ -1588,14 +1596,41 @@ Declared in library mathcomp.analysis.numfun, line 176, characters 11-25
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> -</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssrint.html#pmulrn">pmulrn</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.num_theory.numdomain.html#Num.Theory.ler_nat">ler_nat</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.ssrnat#leq_b1">leq_b1</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Canonical</span><span class="id"> </span><span id="indic_inum" class="id"><div name="indic_inum" class=" tooltip">indic_inum<span class='tooltip-area'><p>itv_partitionR :
-forall {d : Order.disp_t} {T : porderType d}, seq T -> T -> seq T
+<span class="vernacular">Canonical</span><span class="id"> </span><span id="indic_inum" class="id"><div name="indic_inum" class=" tooltip">indic_inum<span class='tooltip-area'><p>variation :
+forall {R : numDomainType},
+R ->
+R ->
+(R -> R) ->
+seq R ->
+{|
+  Num.POrderedZmodule.sort := R;
+  Num.POrderedZmodule.class :=
+    {|
+      Num.POrderedZmodule.Algebra_hasOpp_mixin := Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_hasZero_mixin := Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_hasAdd_mixin := Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_BaseZmoduleNmodule_isZmodule_mixin :=
+        Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_BaseAddUMagma_isAddUMagma_mixin :=
+        Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_BaseAddMagma_isAddMagma_mixin :=
+        Num.NumDomain.class R;
+      Num.POrderedZmodule.choice_hasChoice_mixin := Num.NumDomain.class R;
+      Num.POrderedZmodule.eqtype_hasDecEq_mixin := Num.NumDomain.class R;
+      Num.POrderedZmodule.Order_isDuallyPreorder_mixin :=
+        Num.NumDomain.class R;
+      Num.POrderedZmodule.Order_Preorder_isDuallyPOrder_mixin :=
+        Num.NumDomain.class R;
+      Num.POrderedZmodule.Algebra_AddMagma_isAddSemigroup_mixin :=
+        Num.NumDomain.class R
+    |}
+|}
 
-itv_partitionR is not universe polymorphic
-Arguments itv_partitionR {d T} s%_seq_scope c
-itv_partitionR is transparent
-Expands to: Constant mathcomp.analysis.numfun.itv_partitionR
-Declared in library mathcomp.analysis.numfun, line 179, characters 11-25
+variation is not universe polymorphic
+Arguments variation {R} (a b)%_ring_scope f%_function_scope s%_seq_scope
+variation is transparent
+Expands to: Constant mathcomp.analysis.numfun.variation
+Declared in library mathcomp.analysis.numfun, line 265, characters 11-20
 </p></span></div></span><span class="id"> {</span><span id="T:463" class="id"><a name="T:463" class="">T</a></span><span class="id">}</span><span class="id"> {</span><span id="R:464" class="id"><a name="R:464" class="">R</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.num_theory.numdomain.html#Num.NumDomain.Exports.numDomainType">numDomainType</a></span><span class="id">}</span> (<span id="A:465" class="id"><a name="A:465" class="">A</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#T:463">T</a></span>) (<span id="x:466" class="id"><a name="x:466" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#T:463">T</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">Itv</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">mk</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.numfun.html#num_spec_indic">num_spec_indic</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#T:463">T</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#R:464">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#A:465">A</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#x:466">x</a></span>).<br/>
 <br/>
@@ -1849,46 +1884,7 @@ Qed.</div></details>
 <br/>
 <span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class="">HB</a></span></span></span>.<span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class="">instance</a></span></span></span><span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class=""> Definition</a></span></span></span><span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class=""> _</a></span></span></span><span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class=""> X</a></span></span></span><span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class=""> :=</a></span></span></span><span id="numfun_indic__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_factory_16" class="id"><span id="ring.hb_instance_15.X" class="id"><a name="numfun_indic__canonical__cardinality_FImFun" class=""> indic_fimfun_subproof</a></span></span></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#X:561">X</a></span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="indic_fimfun" class="id"><div name="indic_fimfun" class=" tooltip">indic_fimfun<span class='tooltip-area'><p>variation :
-forall {R : numDomainType},
-R ->
-R ->
-(R -> R) ->
-seq R ->
-{|
-  Num.POrderedZmodule.sort := R;
-  Num.POrderedZmodule.class :=
-    {|
-      Num.POrderedZmodule.Algebra_hasOpp_mixin := Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_hasZero_mixin := Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_hasAdd_mixin := Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_BaseZmoduleNmodule_isZmodule_mixin :=
-        Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_BaseAddUMagma_isAddUMagma_mixin :=
-        Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_BaseAddMagma_isAddMagma_mixin :=
-        Num.NumDomain.class R;
-      Num.POrderedZmodule.choice_hasChoice_mixin := Num.NumDomain.class R;
-      Num.POrderedZmodule.eqtype_hasDecEq_mixin := Num.NumDomain.class R;
-      Num.POrderedZmodule.Order_isDuallyPreorder_mixin :=
-        Num.NumDomain.class R;
-      Num.POrderedZmodule.Order_Preorder_isDuallyPOrder_mixin :=
-        Num.NumDomain.class R;
-      Num.POrderedZmodule.Algebra_AddMagma_isAddSemigroup_mixin :=
-        Num.NumDomain.class R
-    |}
-|}
-
-variation is not universe polymorphic
-Arguments variation {R} (a b)%_ring_scope f%_function_scope s%_seq_scope
-variation is transparent
-Expands to: Constant mathcomp.analysis.numfun.variation
-Declared in library mathcomp.analysis.numfun, line 265, characters 11-20
-</p></span></div></span> (<span id="X:562" class="id"><a name="X:562" class="">X</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.aT">aT</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">{fimfun</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.aT">aT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> &gt;-&gt;</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.rT">rT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">}</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#e353122e03268a6eab33cb5af81dd3c6">\1_</a></span><span class="id"><a href="mathcomp.analysis.numfun.html#X:562">X</a></span>.<br/>
-<br/>
-<span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class="">HB</a></span></span></span></span></span></span>.<span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class="">instance</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> Definition</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> _</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> k</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> f</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> :=</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> FImFun</a></span></span></span></span></span></span>.<span class="id"><a href="mathcomp.classical.cardinality.html#FImFun.copy">copy</a></span> (<span class="id"><a href="mathcomp.analysis.numfun.html#k:563">k</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> \o*</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#f:564">f</a></span>) (<span class="id"><a href="mathcomp.analysis.numfun.html#f:564">f</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#2d0cfb150261028f4ebd2ba355623dcc"> *</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#2d0cfb150261028f4ebd2ba355623dcc"> </a></span><span class="id"><a href="mathcomp.classical.cardinality.html#cst_fimfun">cst_fimfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#k:563">k</a></span>).<br/>
-<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="scale_fimfun" class="id"><div name="scale_fimfun" class=" tooltip">scale_fimfun<span class='tooltip-area'><p>variations :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="indic_fimfun" class="id"><div name="indic_fimfun" class=" tooltip">indic_fimfun<span class='tooltip-area'><p>variations :
 forall {R : numDomainType},
 R ->
 R ->
@@ -1923,6 +1919,17 @@ Arguments variations {R} (a b)%_ring_scope f%_function_scope _
 variations is transparent
 Expands to: Constant mathcomp.analysis.numfun.variations
 Declared in library mathcomp.analysis.numfun, line 508, characters 11-21
+</p></span></div></span> (<span id="X:562" class="id"><a name="X:562" class="">X</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.aT">aT</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">{fimfun</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.aT">aT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> &gt;-&gt;</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.rT">rT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">}</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#e353122e03268a6eab33cb5af81dd3c6">\1_</a></span><span class="id"><a href="mathcomp.analysis.numfun.html#X:562">X</a></span>.<br/>
+<br/>
+<span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class="">HB</a></span></span></span></span></span></span>.<span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class="">instance</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> Definition</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> _</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> k</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> f</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> :=</a></span></span></span></span></span></span><span id="GRing_mulr_fun__canonical__cardinality_FImFun" class="id"><span id="HB_unnamed_mixin_21" class="id"><span id="cardinality_FImFun__to__cardinality_FiniteImage" class="id"><span id="HB_unnamed_factory_19" class="id"><span id="ring.hb_instance_18.f" class="id"><span id="ring.hb_instance_18.k" class="id"><a name="GRing_mulr_fun__canonical__cardinality_FImFun" class=""> FImFun</a></span></span></span></span></span></span>.<span class="id"><a href="mathcomp.classical.cardinality.html#FImFun.copy">copy</a></span> (<span class="id"><a href="mathcomp.analysis.numfun.html#k:563">k</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> \o*</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#f:564">f</a></span>) (<span class="id"><a href="mathcomp.analysis.numfun.html#f:564">f</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#2d0cfb150261028f4ebd2ba355623dcc"> *</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#2d0cfb150261028f4ebd2ba355623dcc"> </a></span><span class="id"><a href="mathcomp.classical.cardinality.html#cst_fimfun">cst_fimfun</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#k:563">k</a></span>).<br/>
+<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="scale_fimfun" class="id"><div name="scale_fimfun" class=" tooltip">scale_fimfun<span class='tooltip-area'><p>bounded_variation : forall {R : numDomainType}, R -> R -> (R -> R) -> Prop
+
+bounded_variation is not universe polymorphic
+Arguments bounded_variation {R} (a b)%_ring_scope f%_function_scope
+bounded_variation is transparent
+Expands to: Constant mathcomp.analysis.numfun.bounded_variation
+Declared in library mathcomp.analysis.numfun, line 534, characters 11-28
 </p></span></div></span><span class="id"> </span><span id="k:565" class="id"><a name="k:565" class="">k</a></span><span class="id"> </span><span id="f:566" class="id"><a name="f:566" class="">f</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">{fimfun</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.aT">aT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> &gt;-&gt;</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#ring.rT">rT</a></span><span class="id"><a href="mathcomp.classical.cardinality.html#5d25759c49498e68ff2d2e33aa44cf93">}</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.numfun.html#k:565">k</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> \o*</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#5e03abe1c4aaadd0b39b8ab0cf62f35b"> </a></span><span class="id"><a href="mathcomp.analysis.numfun.html#f:566">f</a></span>.<br/>
 <br/>
 <span class="vernacular">End</span><span class="id"> ring</span>.<br/>
