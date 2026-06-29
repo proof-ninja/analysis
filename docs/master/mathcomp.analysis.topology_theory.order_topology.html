@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.topology_theory.order_topology</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis bd05c57" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis e656ced" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
@@ -25,7 +25,13 @@
           <ul>
           <li><details id="mathcomp.analysis"><summary>analysis</summary>
           <ul>
-          <li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
+          <li><details id="mathcomp.analysis.functional_analysis"><summary>functional_analysis</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.functional_analysis.hahn_banach_theorem.html">hahn_banach_theorem</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
           <ul>
           <li><a href="mathcomp.analysis.homotopy_theory.continuous_path.html">continuous_path</a></li>
 <li><a href="mathcomp.analysis.homotopy_theory.homotopy.html">homotopy</a></li>
@@ -47,6 +53,7 @@
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_under.html">lebesgue_integral_under</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></li>
+<li><a href="mathcomp.analysis.lebesgue_integral_theory.radon_nikodym.html">radon_nikodym</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></li>
           </ul>
           </details>
@@ -62,6 +69,7 @@
 <li><a href="mathcomp.analysis.measure_theory.measure_function.html">measure_function</a></li>
 <li><a href="mathcomp.analysis.measure_theory.measure_negligible.html">measure_negligible</a></li>
 <li><a href="mathcomp.analysis.measure_theory.probability_measure.html">probability_measure</a></li>
+<li><a href="mathcomp.analysis.measure_theory.signed_measure.html">signed_measure</a></li>
           </ul>
           </details>
           </li>
@@ -143,6 +151,7 @@
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
+<li><a href="mathcomp.analysis.independence.html">independence</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
 <li><a href="mathcomp.analysis.landau.html">landau</a></li>
 <li><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></li>
@@ -205,7 +214,6 @@
 <li><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></li>
 <li><a href="mathcomp.reals.real_interval.html">real_interval</a></li>
 <li><a href="mathcomp.reals.reals.html">reals</a></li>
-<li><a href="mathcomp.reals.signed.html">signed</a></li>
           </ul>
           </details>
           </li>
@@ -230,7 +238,7 @@
       </p>
       <h1 class="title">Module mathcomp.analysis.topology_theory.order_topology</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.all_algebra.html">all_algebra</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebra.html">algebra</a></span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.finmap.finmap">finmap</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
 <span class="id">#[warning=</span><span class="id">&quot;-warn-library-file-internal-analysis&quot;</span><span class="id">]</span><br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.unstable.html">unstable</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html">topology_structure</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html">uniform_structure</a></span>.<br/>
@@ -250,7 +258,7 @@
 ```
 </div>
 <br/>
-<span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TTheory">Order</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TTheory">TTheory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span>.<br/>
+<span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TTheory">Order</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TTheory">TTheory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span>.<br/>
 <br/>
 <span class="vernacular">Unset</span><span class="id"> SsrOldRewriteGoalsOrder</span>.  <br/>
 <span class="gallina-kwd">Set</span><span class="vernacular"> Implicit</span><span class="vernacular"> Arguments</span>.<br/>
@@ -454,7 +462,28 @@ Qed.</div></details>
 <span class="vernacular">Hint</span><span class="id"> Resolve</span><span class="id"> rray_closed</span><span class="id"> :</span><span class="id"> core</span>.<br/>
 <span class="vernacular">Hint</span><span class="id"> Resolve</span><span class="id"> itv_closed</span><span class="id"> :</span><span class="id"> core</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="order_topology" class="id"><div name="order_topology" class=" tooltip">order_topology<span class='tooltip-area'></span></div></span> (<span id="T:61" class="id"><a name="T:61" class="">T</a></span><span class="id"> :</span><span class="gallina-kwd"> Type</span>)<span class="id"> :</span><span class="gallina-kwd"> Type</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#T:61">T</a></span>.<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="order_topology" class="id"><div name="order_topology" class=" tooltip">order_topology<span class='tooltip-area'><p>nbhs_subspace :
+forall {T : topologicalType} [A : set T],
+subspace A -> set_system (subspace A)
+
+nbhs_subspace is not universe polymorphic
+Arguments nbhs_subspace {T} [A]%_classical_set_scope x _
+nbhs_subspace is transparent
+Expands to: Constant
+            mathcomp.analysis.topology_theory.subspace_topology.nbhs_subspace
+Declared in
+library mathcomp.analysis.topology_theory.subspace_topology, line 51, characters 11-24
+from_subspace : forall {T U : Type} (A : set T), (T -> U) -> subspace A -> U
+
+from_subspace is not universe polymorphic
+Arguments from_subspace {T U}%_type_scope A%_classical_set_scope
+  f%_function_scope _
+from_subspace is transparent
+Expands to: Constant
+            mathcomp.analysis.topology_theory.subspace_topology.from_subspace
+Declared in
+library mathcomp.analysis.topology_theory.subspace_topology, line 317, characters 11-24
+</p></span></div></span> (<span id="T:61" class="id"><a name="T:61" class="">T</a></span><span class="id"> :</span><span class="gallina-kwd"> Type</span>)<span class="id"> :</span><span class="gallina-kwd"> Type</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#T:61">T</a></span>.<br/>
 <br/>
 <span class="vernacular">Section</span><span class="id"> induced_order_topology</span>.<br/>
 <br/>
@@ -521,7 +550,7 @@ Qed.</div></details>
 &nbsp;&nbsp;<span class="id">move=&gt;</span><span class="id"> WH</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html#a686f16c7fee28a2e0daca8726c6780b">[dup]</a></span><span class="id"> /</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TotalTheory.lt_total">lt_total</a></span><span class="id">/</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orP">orP</a></span><span class="id">[|yx</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id">/</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#nesym">nesym</a></span><span class="id">/</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> yNx];</span><span class="id"> first</span><span class="id"> exact:</span><span class="id"> WH</span>.<br/>
 &nbsp;&nbsp;<span class="id">rewrite</span> (_<span class="id"> :</span> (<span class="gallina-kwd">fun</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> _</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a">=</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="xy:88" class="id"><span id="xy:87" class="id"><span id="xy:86" class="id"><a name="xy:88" class="">xy</a></span></span></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.min">Order</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.min">min</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#xy:86">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.1'">1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#xy:86">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> \o</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.classical.unstable.html#swap">swap</a></span><span class="id"> T</span><span class="id"> T</span>)<span class="id">;</span><span class="id"> last</span><span class="id"> first</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#continuous_comp">continuous_comp</a></span><span class="id">;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.product_topology.html#swap_continuous">swap_continuous</a></span><span class="id">|exact:</span><span class="id"> WH]</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#continuous_comp">continuous_comp</a></span><span class="id">;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.product_topology.html#swap_continuous">swap_continuous</a></span><span class="id">|exact:</span><span class="id"> WH]</span>.<br/>
 &nbsp;&nbsp;<span class="id">apply/</span><span class="id"><a href="mathcomp.classical.boolp.html#funext">funext</a></span><span class="id"> =&gt;</span><span class="id"> -[a</span><span class="id"> b/=];</span><span class="id"> have</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orP">orP</a></span><span class="id">[ab|ba]</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TotalTheory.le_total">le_total</a></span><span class="id"> a</span><span class="id"> b</span>.<br/>
 &nbsp;&nbsp;<span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.min_l">min_l</a></span><span class="id"> //</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.min_r">min_r</a></span>.<br/>
 &nbsp;&nbsp;<span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.min_r">min_r</a></span><span class="id"> //</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.min_l">min_l</a></span>.<br/>
@@ -564,7 +593,7 @@ Qed.</div></details>
 &nbsp;&nbsp;<span class="id">move=&gt;</span><span class="id"> WH</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html#a686f16c7fee28a2e0daca8726c6780b">[dup]</a></span><span class="id"> /</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TotalTheory.lt_total">lt_total</a></span><span class="id">/</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orP">orP</a></span><span class="id">[|yx</span><span class="id"> /</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id">/</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#nesym">nesym</a></span><span class="id">/</span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#eqP">eqP</a></span><span class="id"> yNx];</span><span class="id"> first</span><span class="id"> exact:</span><span class="id"> WH</span>.<br/>
 &nbsp;&nbsp;<span class="id">rewrite</span> (_<span class="id"> :</span> (<span class="gallina-kwd">fun</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> _</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a">=</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="xy:100" class="id"><span id="xy:99" class="id"><span id="xy:98" class="id"><a name="xy:100" class="">xy</a></span></span></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.max">Order</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.preorder.html#Order.max">max</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#xy:98">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.1'">1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.order_topology.html#xy:98">xy</a></span>.<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#::pair_scope:x_'.2'">2</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> \o</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrfun.html#687e14754dadb7c0b04f27d8f71d2638"> </a></span><span class="id">@</span><span class="id"><a href="mathcomp.classical.unstable.html#swap">swap</a></span><span class="id"> T</span><span class="id"> T</span>)<span class="id">;</span><span class="id"> last</span><span class="id"> first</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#continuous_comp">continuous_comp</a></span><span class="id">;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.product_topology.html#swap_continuous">swap_continuous</a></span><span class="id">|exact:</span><span class="id"> WH]</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#continuous_comp">continuous_comp</a></span><span class="id">;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.product_topology.html#swap_continuous">swap_continuous</a></span><span class="id">|exact:</span><span class="id"> WH]</span>.<br/>
 &nbsp;&nbsp;<span class="id">apply/</span><span class="id"><a href="mathcomp.classical.boolp.html#funext">funext</a></span><span class="id"> =&gt;</span><span class="id"> -[a</span><span class="id"> b]</span><span class="id"> /=;</span><span class="id"> have</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#orP">orP</a></span><span class="id"> [ab|ba]</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.TotalTheory.le_total">le_total</a></span><span class="id"> a</span><span class="id"> b</span>.<br/>
 &nbsp;&nbsp;<span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.max_r">max_r</a></span><span class="id"> //</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.max_l">max_l</a></span>.<br/>
 &nbsp;&nbsp;<span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.max_l">max_l</a></span><span class="id"> //</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.order.order.html#Order.POrderTheory.max_r">max_r</a></span>.<br/>

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.experimental_reals.discrete</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis bd05c57" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis e656ced" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
@@ -25,7 +25,13 @@
           <ul>
           <li><details id="mathcomp.analysis"><summary>analysis</summary>
           <ul>
-          <li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
+          <li><details id="mathcomp.analysis.functional_analysis"><summary>functional_analysis</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.functional_analysis.hahn_banach_theorem.html">hahn_banach_theorem</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
           <ul>
           <li><a href="mathcomp.analysis.homotopy_theory.continuous_path.html">continuous_path</a></li>
 <li><a href="mathcomp.analysis.homotopy_theory.homotopy.html">homotopy</a></li>
@@ -47,6 +53,7 @@
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_under.html">lebesgue_integral_under</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></li>
+<li><a href="mathcomp.analysis.lebesgue_integral_theory.radon_nikodym.html">radon_nikodym</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></li>
           </ul>
           </details>
@@ -62,6 +69,7 @@
 <li><a href="mathcomp.analysis.measure_theory.measure_function.html">measure_function</a></li>
 <li><a href="mathcomp.analysis.measure_theory.measure_negligible.html">measure_negligible</a></li>
 <li><a href="mathcomp.analysis.measure_theory.probability_measure.html">probability_measure</a></li>
+<li><a href="mathcomp.analysis.measure_theory.signed_measure.html">signed_measure</a></li>
           </ul>
           </details>
           </li>
@@ -143,6 +151,7 @@
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
+<li><a href="mathcomp.analysis.independence.html">independence</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
 <li><a href="mathcomp.analysis.landau.html">landau</a></li>
 <li><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></li>
@@ -205,7 +214,6 @@
 <li><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></li>
 <li><a href="mathcomp.reals.real_interval.html">real_interval</a></li>
 <li><a href="mathcomp.reals.reals.html">reals</a></li>
-<li><a href="mathcomp.reals.signed.html">signed</a></li>
           </ul>
           </details>
           </li>
@@ -232,7 +240,7 @@
 <br/>
 <span class="vernacular">From</span><span class="id"> Corelib</span><span class="vernacular"> Require</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Setoids.Setoid.html">Setoid</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.all_algebra.html">all_algebra</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebra.html">algebra</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span>.<span class="id">classical</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.xfinmap.html">xfinmap</a></span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html">reals</a></span>.<br/>
 <br/>
@@ -241,7 +249,7 @@
 <span class="vernacular">Unset</span><span class="vernacular"> Strict</span><span class="vernacular"> Implicit</span>.<br/>
 <span class="vernacular">Unset</span><span class="vernacular"> Printing</span><span class="vernacular"> Implicit</span><span class="vernacular"> Defensive</span>.<br/>
 <br/>
-<span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span>.<br/>
+<span class="vernacular">Import</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.ssralg.html#GRing.Theory">GRing</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.ssralg.html#GRing.Theory">Theory</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Num</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.archimedean.html#Num.Theory">Theory</a></span>.<br/>
 <br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> ring_scope</span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> real_scope</span>.<br/>
@@ -338,26 +346,9 @@ Qed.</div></details>
 <span class="vernacular">Section</span><span class="id"> CountType</span>.<br/>
 <span class="vernacular">Variables</span> (<span id="CountableTheory.CountType.T" class="id"><a name="CountableTheory.CountType.T" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#Equality.Exports.eqType">eqType</a></span>) (<span id="CountableTheory.CountType.E" class="id"><a name="CountableTheory.CountType.E" class="">E</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#pred">pred</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#T:57">T</a></span>) (<span id="CountableTheory.CountType.c" class="id"><a name="CountableTheory.CountType.c" class="">c</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#countable">countable</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#E:59">E</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="countable_countMixin" class="id"><div name="countable_countMixin" class=" tooltip">countable_countMixin<span class='tooltip-area'><p>pred_of_nbh : forall {R : realType} [l : \bar R], nbh l -> simpl_pred R
-
-pred_of_nbh is not universe polymorphic
-Arguments pred_of_nbh {R} [l]%_ereal_scope v
-pred_of_nbh is a coercion
-pred_of_nbh is transparent
-Expands to: Constant mathcomp.experimental_reals.realseq.pred_of_nbh
-Declared in
-library mathcomp.experimental_reals.realseq, line 51, characters 9-20
-</p></span></div></span> <span class="id"> :=</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Countable.copy">Countable</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Countable.copy">copy</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">[psub</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68"> </a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.E">E</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">]</a></span><br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="countable_countMixin" class="id"><div name="countable_countMixin" class=" tooltip">countable_countMixin<span class='tooltip-area'></span></div></span> <span class="id"> :=</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Countable.copy">Countable</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Countable.copy">copy</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">[psub</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68"> </a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.E">E</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">]</a></span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#pcan_type">pcan_type</a></span> (<span class="id"><a href="mathcomp.experimental_reals.discrete.html#rpickleK">rpickleK</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.c">c</a></span>)).<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="countable_choiceMixin" class="id"><div name="countable_choiceMixin" class=" tooltip">countable_choiceMixin<span class='tooltip-area'><p>eclamp : forall {R : realType}, R -> R
-
-eclamp is not universe polymorphic
-Arguments eclamp {R} e%_ring_scope
-eclamp is transparent
-Expands to: Constant mathcomp.experimental_reals.realseq.eclamp
-Declared in
-library mathcomp.experimental_reals.realseq, line 91, characters 11-17
-</p></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">Choice</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">copy</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">[psub</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68"> </a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.E">E</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">]</a></span><br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="countable_choiceMixin" class="id"><div name="countable_choiceMixin" class=" tooltip">countable_choiceMixin<span class='tooltip-area'></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">Choice</a></span>.<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.choice#Choice.copy">copy</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">[psub</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68"> </a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.E">E</a></span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#c0c811e7546edbb2f6af662704007a68">]</a></span><br/>
 &nbsp;&nbsp;(<span class="id"><a href="NOTFOUND the module url for mathcomp.boot.eqtype#pcan_type">pcan_type</a></span> (<span class="id"><a href="mathcomp.experimental_reals.discrete.html#rpickleK">rpickleK</a></span><span class="id"> </span><span class="id"><a href="mathcomp.experimental_reals.discrete.html#CountableTheory.CountType.c">c</a></span>)).<br/>
 <span class="vernacular">End</span><span class="id"> CountType</span>.<br/>
 <span class="vernacular">End</span><span class="id"> CountableTheory</span>.<br/>

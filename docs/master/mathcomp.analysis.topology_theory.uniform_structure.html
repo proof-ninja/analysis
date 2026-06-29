@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.topology_theory.uniform_structure</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis bd05c57" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis e656ced" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
@@ -25,7 +25,13 @@
           <ul>
           <li><details id="mathcomp.analysis"><summary>analysis</summary>
           <ul>
-          <li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
+          <li><details id="mathcomp.analysis.functional_analysis"><summary>functional_analysis</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.functional_analysis.hahn_banach_theorem.html">hahn_banach_theorem</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
           <ul>
           <li><a href="mathcomp.analysis.homotopy_theory.continuous_path.html">continuous_path</a></li>
 <li><a href="mathcomp.analysis.homotopy_theory.homotopy.html">homotopy</a></li>
@@ -47,6 +53,7 @@
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_under.html">lebesgue_integral_under</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></li>
+<li><a href="mathcomp.analysis.lebesgue_integral_theory.radon_nikodym.html">radon_nikodym</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></li>
           </ul>
           </details>
@@ -62,6 +69,7 @@
 <li><a href="mathcomp.analysis.measure_theory.measure_function.html">measure_function</a></li>
 <li><a href="mathcomp.analysis.measure_theory.measure_negligible.html">measure_negligible</a></li>
 <li><a href="mathcomp.analysis.measure_theory.probability_measure.html">probability_measure</a></li>
+<li><a href="mathcomp.analysis.measure_theory.signed_measure.html">signed_measure</a></li>
           </ul>
           </details>
           </li>
@@ -143,6 +151,7 @@
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
+<li><a href="mathcomp.analysis.independence.html">independence</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
 <li><a href="mathcomp.analysis.landau.html">landau</a></li>
 <li><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></li>
@@ -205,7 +214,6 @@
 <li><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></li>
 <li><a href="mathcomp.reals.real_interval.html">real_interval</a></li>
 <li><a href="mathcomp.reals.reals.html">reals</a></li>
-<li><a href="mathcomp.reals.signed.html">signed</a></li>
           </ul>
           </details>
           </li>
@@ -230,7 +238,7 @@
       </p>
       <h1 class="title">Module mathcomp.analysis.topology_theory.uniform_structure</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.all_algebra.html">all_algebra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebra.html">algebra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html">topology_structure</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
@@ -280,16 +288,7 @@ complete spaces, which extends uniform in the hierarchy.
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> classical_set_scope</span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> ring_scope</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="nbhs_" class="id"><div name="nbhs_" class=" tooltip">nbhs_<span class='tooltip-area'><p>discrete_topology : Type -> Type
-
-discrete_topology is not universe polymorphic
-Arguments discrete_topology T%_type_scope
-discrete_topology is transparent
-Expands to: Constant
-            mathcomp.analysis.topology_theory.discrete_topology.discrete_topology
-Declared in
-library mathcomp.analysis.topology_theory.discrete_topology, line 182, characters 11-28
-</p></span></div></span><span class="id"> {</span><span id="T:1" class="id"><a name="T:1" class="">T</a></span><span class="id"> </span><span id="T':2" class="id"><a name="T':2" class="">T'</a></span><span class="id">}</span> (<span id="ent:3" class="id"><a name="ent:3" class="">ent</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:1">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T':2">T'</a></span>)) (<span id="x:4" class="id"><a name="x:4" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:1">T</a></span>)<span class="id"> :=</span><br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="nbhs_" class="id"><div name="nbhs_" class=" tooltip">nbhs_<span class='tooltip-area'></span></div></span><span class="id"> {</span><span id="T:1" class="id"><a name="T:1" class="">T</a></span><span class="id"> </span><span id="T':2" class="id"><a name="T':2" class="">T'</a></span><span class="id">}</span> (<span id="ent:3" class="id"><a name="ent:3" class="">ent</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:1">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T':2">T'</a></span>)) (<span id="x:4" class="id"><a name="x:4" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:1">T</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#filter_from">filter_from</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#ent:3">ent</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="A:5" class="id"><a name="A:5" class="">A</a></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#xsection">xsection</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#A:5">A</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#x:4">x</a></span>).<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="nbhs_E" class="id"><a name="nbhs_E" class="">nbhs_E</a></span><span class="id"> {</span><span id="T:6" class="id"><a name="T:6" class="">T</a></span><span class="id"> </span><span id="T':7" class="id"><a name="T':7" class="">T'</a></span><span class="id">}</span> (<span id="ent:8" class="id"><a name="ent:8" class="">ent</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:6">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> *</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T':7">T'</a></span>))<span class="id"> </span><span id="x:9" class="id"><a name="x:9" class="">x</a></span><span class="id"> :</span><br/>
@@ -649,7 +648,16 @@ Qed.</div></details>
 <br/>
 <div class="doc">Complete uniform spaces </div>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="cauchy" class="id"><div name="cauchy" class=" tooltip">cauchy<span class='tooltip-area'></span></div></span><span class="id"> {</span><span id="T:153" class="id"><a name="T:153" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#uniformType">uniformType</a></span><span class="id">}</span> (<span id="F:154" class="id"><a name="F:154" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:153">T</a></span>)<span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:154">F</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:154">F</a></span>)<span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span>.<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="cauchy" class="id"><div name="cauchy" class=" tooltip">cauchy<span class='tooltip-area'><p>discrete_ent : forall {T : Type}, set (set (T * T))
+
+discrete_ent is not universe polymorphic
+Arguments discrete_ent {T}%_type_scope _
+discrete_ent is transparent
+Expands to: Constant
+            mathcomp.analysis.topology_theory.discrete_topology.discrete_ent
+Declared in
+library mathcomp.analysis.topology_theory.discrete_topology, line 43, characters 11-23
+</p></span></div></span><span class="id"> {</span><span id="T:153" class="id"><a name="T:153" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#uniformType">uniformType</a></span><span class="id">}</span> (<span id="F:154" class="id"><a name="F:154" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:153">T</a></span>)<span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:154">F</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:154">F</a></span>)<span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#entourage">entourage</a></span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="cvg_cauchy" class="id"><a name="cvg_cauchy" class="">cvg_cauchy</a></span><span class="id"> {</span><span id="T:155" class="id"><a name="T:155" class="">T</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#puniformType">puniformType</a></span><span class="id">}</span> (<span id="F:156" class="id"><a name="F:156" class="">F</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:155">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.filter.html#Filter">Filter</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:156">F</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.filter.html#6aec98e3bb82b26e1327c07480d9aa11">[cvg</a></span><span class="id"><a href="mathcomp.classical.filter.html#6aec98e3bb82b26e1327c07480d9aa11"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:156">F</a></span><span class="id"><a href="mathcomp.classical.filter.html#6aec98e3bb82b26e1327c07480d9aa11"> in</a></span><span class="id"><a href="mathcomp.classical.filter.html#6aec98e3bb82b26e1327c07480d9aa11"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#T:155">T</a></span><span class="id"><a href="mathcomp.classical.filter.html#6aec98e3bb82b26e1327c07480d9aa11">]</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#cauchy">cauchy</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.uniform_structure.html#F:156">F</a></span>.<br/>

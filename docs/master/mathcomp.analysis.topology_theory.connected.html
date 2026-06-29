@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.topology_theory.connected</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis bd05c57" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis e656ced" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
@@ -25,7 +25,13 @@
           <ul>
           <li><details id="mathcomp.analysis"><summary>analysis</summary>
           <ul>
-          <li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
+          <li><details id="mathcomp.analysis.functional_analysis"><summary>functional_analysis</summary>
+          <ul>
+          <li><a href="mathcomp.analysis.functional_analysis.hahn_banach_theorem.html">hahn_banach_theorem</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.analysis.homotopy_theory"><summary>homotopy_theory</summary>
           <ul>
           <li><a href="mathcomp.analysis.homotopy_theory.continuous_path.html">continuous_path</a></li>
 <li><a href="mathcomp.analysis.homotopy_theory.homotopy.html">homotopy</a></li>
@@ -47,6 +53,7 @@
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html">lebesgue_integral_nonneg</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_under.html">lebesgue_integral_under</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html">measurable_fun_approximation</a></li>
+<li><a href="mathcomp.analysis.lebesgue_integral_theory.radon_nikodym.html">radon_nikodym</a></li>
 <li><a href="mathcomp.analysis.lebesgue_integral_theory.simple_functions.html">simple_functions</a></li>
           </ul>
           </details>
@@ -62,6 +69,7 @@
 <li><a href="mathcomp.analysis.measure_theory.measure_function.html">measure_function</a></li>
 <li><a href="mathcomp.analysis.measure_theory.measure_negligible.html">measure_negligible</a></li>
 <li><a href="mathcomp.analysis.measure_theory.probability_measure.html">probability_measure</a></li>
+<li><a href="mathcomp.analysis.measure_theory.signed_measure.html">signed_measure</a></li>
           </ul>
           </details>
           </li>
@@ -143,6 +151,7 @@
 <li><a href="mathcomp.analysis.ftc.html">ftc</a></li>
 <li><a href="mathcomp.analysis.gauss_integral.html">gauss_integral</a></li>
 <li><a href="mathcomp.analysis.hoelder.html">hoelder</a></li>
+<li><a href="mathcomp.analysis.independence.html">independence</a></li>
 <li><a href="mathcomp.analysis.kernel.html">kernel</a></li>
 <li><a href="mathcomp.analysis.landau.html">landau</a></li>
 <li><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></li>
@@ -205,7 +214,6 @@
 <li><a href="mathcomp.reals.prodnormedzmodule.html">prodnormedzmodule</a></li>
 <li><a href="mathcomp.reals.real_interval.html">real_interval</a></li>
 <li><a href="mathcomp.reals.reals.html">reals</a></li>
-<li><a href="mathcomp.reals.signed.html">signed</a></li>
           </ul>
           </details>
           </li>
@@ -230,7 +238,7 @@
       </p>
       <h1 class="title">Module mathcomp.analysis.topology_theory.connected</h1>
 <span class="vernacular">From</span><span class="id"> HB</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="NOTFOUND the module url for HB.structures">structures</a></span>.<br/>
-<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.all_algebra.html">all_algebra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_ssreflect_compat.html">all_ssreflect_compat</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebra.html">algebra</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.all_classical.html">all_classical</a></span>.<br/>
 <span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html">topology_structure</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
@@ -409,14 +417,15 @@ Qed.</div></details>
 <span class="id">-</span><span class="gallina-kwd"> by</span><span class="gallina-kwd"> exists</span><span class="id"> C2</span><span class="id"> =&gt;</span><span class="id"> //;</span><span class="id"> rewrite</span><span class="id"> C2E</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#setIA">setIA</a></span> (<span class="id"><a href="mathcomp.classical.classical_sets.html#setIidl">setIidl</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.topology_theory.topology_structure.html#subset_closure">subset_closure</a></span><span class="id"> _</span><span class="id"> _</span>)).<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="connected_component" class="id"><div name="connected_component" class=" tooltip">connected_component<span class='tooltip-area'><p>at_left : forall [R : numFieldType], R -> set_system R
+<span class="vernacular">Definition</span><span class="id"> </span><span id="connected_component" class="id"><div name="connected_component" class=" tooltip">connected_component<span class='tooltip-area'><p>prod_ent : forall {U V : uniformType}, set (set (U * V * (U * V)))
 
-at_left is not universe polymorphic
-Arguments at_left [R] x%_ring_scope _
-at_left is transparent
-Expands to: Constant mathcomp.analysis.topology_theory.num_topology.at_left
+prod_ent is not universe polymorphic
+Arguments prod_ent {U V} _
+prod_ent is transparent
+Expands to: Constant
+            mathcomp.analysis.topology_theory.product_topology.prod_ent
 Declared in
-library mathcomp.analysis.topology_theory.num_topology, line 155, characters 11-18
+library mathcomp.analysis.topology_theory.product_topology, line 78, characters 11-19
 </p></span></div></span> (<span id="A:43" class="id"><a name="A:43" class="">A</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#connected_sets.T">T</a></span>) (<span id="x:44" class="id"><a name="x:44" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#connected_sets.T">T</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55">\bigcup_</a></span>(<span id="A:46" class="id"><a name="A:46" class="">A</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> in</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b"> </a></span><span id="C:45" class="id"><a name="C:45" class="">C</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b"> :</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#connected_sets.T">T</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681">[/\</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#C:45">C</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#x:44">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#C:45">C</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> `&lt;=`</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#A:43">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> &amp;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#connected">connected</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#C:45">C</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#d7e433f5d2fe56f5b712860a9ff2a681">]</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#b4e6034ee20673e7601398ff7b1b7d1b">]</a></span>)<span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> </a></span><span class="id"><a href="mathcomp.analysis.topology_theory.connected.html#A:46">A</a></span>.<br/>
 <br/>
