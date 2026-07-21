@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.classical.contra</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis e340551 2026.07.20-20:06" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis e340551 2026.07.21-19:34" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
@@ -443,7 +443,30 @@ Expands to: Constant mathcomp.analysis.pi_irrational.pi_irrational.intfsin
 Declared in
 library mathcomp.analysis.pi_irrational, line 213, characters 11-18
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L173' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap4Prop">wrap4Prop</a></span>.<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="Internals.wrap2Prop" class="id"><div name="Internals.wrap2Prop" class=" tooltip">wrap2Prop<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L174' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap3Prop">wrap3Prop</a></span>.<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="Internals.wrap2Prop" class="id"><div name="Internals.wrap2Prop" class=" tooltip">wrap2Prop<span class='tooltip-area'><p>pi_irrational.Unnamed_thm :
+forall {R : realType} [p : {poly R}] [c : R],
+filter.cvg_to
+  (filter.nbhs (filter.fmap [eta horner p] (filter.nbhs (c^'+)%classic)))
+  (filter.nbhs p.[c]%R)
+
+pi_irrational.Unnamed_thm is not universe polymorphic
+Expanded type for implicit arguments
+pi_irrational.Unnamed_thm :
+forall {R : realType} [p : {poly R}] [c : R] [t : set R],
+filter.nbhs p.[c]%R t ->
+exists2 i : R,
+  [set e | (0 < e)%R]%classic i &
+  (ball_ [eta normr] c i
+   `<=` (fun t0 : R =>
+         (fun u : R => is_true (c < u)%R) t0 -> ([eta horner p] @^-1` t) t0))%classic
+
+Arguments pi_irrational.Unnamed_thm {R} [p c]%_ring_scope [t] _
+pi_irrational.Unnamed_thm is opaque
+Expands to: Constant
+            mathcomp.analysis.pi_irrational.pi_irrational.Unnamed_thm
+Declared in
+library mathcomp.analysis.pi_irrational, line 223, characters 0-59
+</p><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L174' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap3Prop">wrap3Prop</a></span>.<br/>
 <span class="vernacular">Canonical</span><span class="id"> </span><span id="Internals.wrap1Prop" class="id"><div name="Internals.wrap1Prop" class=" tooltip">wrap1Prop<span class='tooltip-area'><p>pi_irrational.Unnamed_thm :
 forall {R : realType} [p : {poly R}] [c : R],
 filter.cvg_to
@@ -470,30 +493,7 @@ library mathcomp.analysis.pi_irrational, line 223, characters 0-59
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L175' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="P:57" class="id"><div name="P:57" class=" tooltip">P<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L175' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap2Prop">wrap2Prop</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#P:57">P</a></span>.<br/>
 <br/>
 <span class="id">Polymorphic</span><span class="vernacular"> Structure</span><span class="id"> </span><span id="Internals.wrappedType" class="id"><div name="Internals.wrappedType" class=" tooltip">wrappedType<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L177' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span><span class="id"> :=</span><span class="id"> WrapType</span><span class="id"> {</span><span id="Internals.unwrap_Type" class="id"><div name="Internals.unwrap_Type" class=" tooltip">unwrap_Type<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L177' target='_blank'>Source code</a></span></div></span><span class="id"> :&gt;</span><span class="id"> Type@{i}}</span>.<br/>
-<span class="id">Polymorphic</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="Internals.wrap4Type" class="id"><div name="Internals.wrap4Type" class=" tooltip">wrap4Type<span class='tooltip-area'><p>pi_irrational.Unnamed_thm :
-forall {R : realType} [p : {poly R}] [c : R],
-filter.cvg_to
-  (filter.nbhs (filter.fmap [eta horner p] (filter.nbhs (c^'+)%classic)))
-  (filter.nbhs p.[c]%R)
-
-pi_irrational.Unnamed_thm is not universe polymorphic
-Expanded type for implicit arguments
-pi_irrational.Unnamed_thm :
-forall {R : realType} [p : {poly R}] [c : R] [t : set R],
-filter.nbhs p.[c]%R t ->
-exists2 i : R,
-  [set e | (0 < e)%R]%classic i &
-  (ball_ [eta normr] c i
-   `<=` (fun t0 : R =>
-         (fun u : R => is_true (c < u)%R) t0 -> ([eta horner p] @^-1` t) t0))%classic
-
-Arguments pi_irrational.Unnamed_thm {R} [p c]%_ring_scope [t] _
-pi_irrational.Unnamed_thm is opaque
-Expands to: Constant
-            mathcomp.analysis.pi_irrational.pi_irrational.Unnamed_thm
-Declared in
-library mathcomp.analysis.pi_irrational, line 223, characters 0-59
-</p><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L178' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.WrapType">WrapType</a></span><span class="id">@{i}</span>.<br/>
+<span class="id">Polymorphic</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="Internals.wrap4Type" class="id"><div name="Internals.wrap4Type" class=" tooltip">wrap4Type<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L178' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.WrapType">WrapType</a></span><span class="id">@{i}</span>.<br/>
 <span class="id">Polymorphic</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="Internals.wrap3Type" class="id"><div name="Internals.wrap3Type" class=" tooltip">wrap3Type<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L179' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap4Type">wrap4Type</a></span><span class="id">@{i}</span>.<br/>
 <span class="id">Polymorphic</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="Internals.wrap2Type" class="id"><div name="Internals.wrap2Type" class=" tooltip">wrap2Type<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L180' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap3Type">wrap3Type</a></span><span class="id">@{i}</span>.<br/>
 <span class="id">Polymorphic</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="Internals.wrap1Type" class="id"><div name="Internals.wrap1Type" class=" tooltip">wrap1Type<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L181' target='_blank'>Source code</a></span></div></span><span class="id">@{i}</span> (<span id="T:60" class="id"><div name="T:60" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/e340551bbd7b65fc2ed7b15c2182b6c660e8ad6d/classical/contra.v#L181' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> Type@{i}</span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#Internals.wrap2Type">wrap2Type</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.contra.html#T:60">T</a></span>.<br/>
