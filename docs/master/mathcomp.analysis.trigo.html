@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.trigo</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.07.26-19:35" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.07.27-19:50" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -339,7 +339,7 @@ Qed.</div></details>
 <span class="vernacular">End</span><span class="id"> periodic</span>.<br/>
 <br/>
 <span class="vernacular">Section</span><span class="id"> alternating</span>.<br/>
-<span class="vernacular">Variables</span> (<span id="alternating.U" class="id"><div name="alternating.U" class=" tooltip">U<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/trigo.v#L97' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.boot.nmodule.html#Algebra.Zmodule.Exports.zmodType">zmodType</a></span>) (<span id="alternating.V" class="id"><div name="alternating.V" class=" tooltip">V<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/trigo.v#L97' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#GRing.PzRing.Exports.pzRingType">pzRingType</a></span>).<br/>
+<span class="vernacular">Variables</span> (<span id="alternating.U" class="id"><div name="alternating.U" class=" tooltip">U<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/trigo.v#L97' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.boot.nmodule.html#Algebra.Zmodule.Exports.zmodType">zmodType</a></span>) (<span id="alternating.V" class="id"><div name="alternating.V" class=" tooltip">V<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/trigo.v#L97' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#pzRingType">pzRingType</a></span>).<br/>
 <span class="vernacular">Implicit</span><span class="gallina-kwd"> Type</span><span class="id"> f</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.trigo.html#alternating.U">U</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.trigo.html#alternating.V">V</a></span>.<br/>
 <br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="alternating" class="id"><div name="alternating" class=" tooltip">alternating<span class='tooltip-area'><p>periodic :
@@ -364,7 +364,7 @@ Qed.</div></details>
 <span class="vernacular">End</span><span class="id"> alternating</span>.<br/>
 <br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="sin_coeff" class="id"><div name="sin_coeff" class=" tooltip">sin_coeff<span class='tooltip-area'><p>alternating :
-forall [U : GRing.Zmodule.Exports.zmodType] [V : pzRingType],
+forall [U : GRing.Zmodule.Exports.zmodType] [V : ringType],
 (U -> V) -> U -> Prop
 
 alternating is not universe polymorphic
@@ -377,8 +377,7 @@ Declared in library mathcomp.analysis.trigo, line 100, characters 11-22
 <br/>
 <span id="sin_unlock_subterm" class="id"><span id="sin" class="id"><span id="sin.unlock" class="id"><span id="sin.body" class="id"><span id="sin" class="id"><span id="sin_Locked.unlock" class="id"><span id="sin_Locked.body" class="id"><span id="sin_Locked" class="id"><div name="sin_unlock_subterm" class=" tooltip">HB<span class='tooltip-area'><p>sin_coeff :
 forall {R : realType},
-R ->
-(join_GRing_PzRing_between_Algebra_BaseZmodule_and_GRing_PzSemiRing R) ^nat
+R -> (join_GRing_Ring_between_Algebra_BaseZmodule_and_GRing_SemiRing R) ^nat
 
 sin_coeff is not universe polymorphic
 Arguments sin_coeff {R} x%_ring_scope _
