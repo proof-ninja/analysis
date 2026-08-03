@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.measure_theory.measure_function</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.02-19:33" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.03-19:54" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -408,18 +408,7 @@ measure_add m1 m2 == the measure corresponding to the sum of the
 &nbsp;&nbsp;(<span id="mu:57" class="id"><div name="mu:57" class=" tooltip">mu<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L178' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T:55">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#R:56">R</a></span>) (<span id="A:58" class="id"><div name="A:58" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L178' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T:55">T</a></span>) (<span id="F:59" class="id"><div name="F:59" class=" tooltip">F<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L178' target='_blank'>Source code</a></span></div></span><span class="id"> :</span> (<span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T:55">T</a></span>)<span class="id"><a href="mathcomp.analysis.sequences.html#0bbe80633d78a4f277dbfba268ab7c04">^nat</a></span>)<span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:58">A</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> `&lt;=`</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#e19db46c1d4073266228fb7781521a56"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#4652af423267d4923a164c1104e1273f">\bigcup_</a></span><span id="n:60" class="id"><div name="n:60" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L179' target='_blank'>Source code</a></span></div></span><span class="id"><a href="mathcomp.classical.classical_sets.html#4652af423267d4923a164c1104e1273f"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#F:59">F</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#n:60">n</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mu:57">mu</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:58">A</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#63b01a542aec2e4c61e028256cf5a548"> &lt;=</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#63b01a542aec2e4c61e028256cf5a548"> </a></span><span class="id"><a href="mathcomp.analysis.sequences.html#acaaf5f54a6a8a222320424b6e0ccad5">\sum_</a></span>(<span id="n:63" class="id"><span id="n:62" class="id"><span id="n:61" class="id"><div name="n:63" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L179' target='_blank'>Source code</a></span></div></span></span></span><span class="id"><a href="mathcomp.analysis.sequences.html#acaaf5f54a6a8a222320424b6e0ccad5"> &lt;oo</a></span>)<span class="id"><a href="mathcomp.analysis.sequences.html#acaaf5f54a6a8a222320424b6e0ccad5"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mu:57">mu</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#F:59">F</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#n:61">n</a></span>))<span class="id">%E</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="measurable_subset_sigma_subadditive" class="id"><div name="measurable_subset_sigma_subadditive" class=" tooltip">measurable_subset_sigma_subadditive<span class='tooltip-area'><p>semi_additive2 :
-forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
-(set T -> \bar R) -> Prop
-
-semi_additive2 is not universe polymorphic
-Arguments semi_additive2 [d]%_measure_display_scope [R T] mu%_function_scope
-semi_additive2 is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.semi_additive2
-Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 147, characters 11-25
-</p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L181' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="measurable_subset_sigma_subadditive" class="id"><div name="measurable_subset_sigma_subadditive" class=" tooltip">measurable_subset_sigma_subadditive<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L181' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">forall</span> (<span id="A:64" class="id"><div name="A:64" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L182' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#additivity.T">T</a></span>) (<span id="F:65" class="id"><div name="F:65" class=" tooltip">F<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L182' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#additivity.T">T</a></span>)<span class="id">,</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="gallina-kwd">forall</span><span class="id"> </span><span id="n:66" class="id"><div name="n:66" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L183' target='_blank'>Source code</a></span></div></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measurable">measurable</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#F:65">F</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#n:66">n</a></span>))<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measurable">measurable</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:64">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#subset_sigma_subadditive">subset_sigma_subadditive</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#additivity.mu">mu</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:64">A</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#F:65">F</a></span>.<br/>
@@ -542,40 +531,17 @@ Qed.</div></details>
 <span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval.html#bnd_simp">bnd_simp</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Canonical</span><span class="id"> </span><span id="content_inum" class="id"><div name="content_inum" class=" tooltip">content_inum<span class='tooltip-area'><p>semi_additive :
-forall [U V : GRing.BaseAddUMagma.Exports.baseAddUMagmaType],
-(U -> V) -> Prop
-
-semi_additive is not universe polymorphic
-Arguments semi_additive [U V] f%_function_scope
-semi_additive is transparent
-Expands to: Constant
-            mathcomp.algebra.algebraic_hierarchy.ssralg.GRing.Theory.semi_additive
-Declared in
-library mathcomp.algebra.algebraic_hierarchy.ssralg, line 414, characters 11-24
-semi_sigma_additive :
+<span class="vernacular">Canonical</span><span class="id"> </span><span id="content_inum" class="id"><div name="content_inum" class=" tooltip">content_inum<span class='tooltip-area'><p>semi_additive2 :
 forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
 (set T -> \bar R) -> Prop
 
-semi_sigma_additive is not universe polymorphic
-Arguments semi_sigma_additive [d]%_measure_display_scope 
-  [R T] mu%_function_scope
-semi_sigma_additive is transparent
+semi_additive2 is not universe polymorphic
+Arguments semi_additive2 [d]%_measure_display_scope [R T] mu%_function_scope
+semi_additive2 is transparent
 Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.semi_sigma_additive
+            mathcomp.analysis.measure_theory.measure_function.semi_additive2
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 156, characters 11-30
-additive2 :
-forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
-(set T -> \bar R) -> Prop
-
-additive2 is not universe polymorphic
-Arguments additive2 [d]%_measure_display_scope [R T] mu%_function_scope
-additive2 is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.additive2
-Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 161, characters 11-20
+library mathcomp.analysis.measure_theory.measure_function, line 147, characters 11-25
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L291' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="S:113" class="id"><div name="S:113" class=" tooltip">S<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L291' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">Itv</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">mk</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#content_inum_subproof">content_inum_subproof</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#S:113">S</a></span>).<br/>
 <br/>
 <span class="vernacular">End</span><span class="id"> content_signed</span>.<br/>
@@ -772,7 +738,41 @@ Qed.</div></details>
 <span class="id">-</span><span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval.html#bnd_simp">bnd_simp</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Canonical</span><span class="id"> </span><span id="measure_inum" class="id"><div name="measure_inum" class=" tooltip">measure_inum<span class='tooltip-area'><p>additive : forall [U V : GRing.Zmodule.Exports.zmodType], (U -> V) -> Prop
+<span class="vernacular">Canonical</span><span class="id"> </span><span id="measure_inum" class="id"><div name="measure_inum" class=" tooltip">measure_inum<span class='tooltip-area'><p>semi_additive :
+forall [U V : GRing.BaseAddUMagma.Exports.baseAddUMagmaType],
+(U -> V) -> Prop
+
+semi_additive is not universe polymorphic
+Arguments semi_additive [U V] f%_function_scope
+semi_additive is transparent
+Expands to: Constant
+            mathcomp.algebra.algebraic_hierarchy.ssralg.GRing.Theory.semi_additive
+Declared in
+library mathcomp.algebra.algebraic_hierarchy.ssralg, line 414, characters 11-24
+semi_sigma_additive :
+forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
+(set T -> \bar R) -> Prop
+
+semi_sigma_additive is not universe polymorphic
+Arguments semi_sigma_additive [d]%_measure_display_scope 
+  [R T] mu%_function_scope
+semi_sigma_additive is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.semi_sigma_additive
+Declared in
+library mathcomp.analysis.measure_theory.measure_function, line 156, characters 11-30
+additive2 :
+forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
+(set T -> \bar R) -> Prop
+
+additive2 is not universe polymorphic
+Arguments additive2 [d]%_measure_display_scope [R T] mu%_function_scope
+additive2 is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.additive2
+Declared in
+library mathcomp.analysis.measure_theory.measure_function, line 161, characters 11-20
+additive : forall [U V : GRing.Zmodule.Exports.zmodType], (U -> V) -> Prop
 
 additive is not universe polymorphic
 Arguments additive [U V] f%_function_scope
@@ -792,29 +792,6 @@ Expands to: Constant
             mathcomp.analysis.measure_theory.measure_function.sigma_additive
 Declared in
 library mathcomp.analysis.measure_theory.measure_function, line 168, characters 11-25
-subadditive :
-forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
-(set T -> \bar R) -> Prop
-
-subadditive is not universe polymorphic
-Arguments subadditive [d]%_measure_display_scope [R T] mu%_function_scope
-subadditive is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.subadditive
-Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 172, characters 11-22
-subset_sigma_subadditive :
-forall {T : Type} {R : numFieldType},
-(set T -> \bar R) -> set T -> (set T) ^nat -> Prop
-
-subset_sigma_subadditive is not universe polymorphic
-Arguments subset_sigma_subadditive {T}%_type_scope 
-  {R} mu%_function_scope A%_classical_set_scope F
-subset_sigma_subadditive is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.subset_sigma_subadditive
-Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 177, characters 11-35
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L457' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="S:218" class="id"><div name="S:218" class=" tooltip">S<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L457' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">Itv</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#Itv.mk">mk</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_inum_subproof">measure_inum_subproof</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#S:218">S</a></span>).<br/>
 <br/>
 <span class="vernacular">End</span><span class="id"> measure_signed</span>.<br/>
@@ -905,31 +882,29 @@ Qed.</div></details>
 <span class="vernacular">Context</span><span class="id"> </span><span id="measure_sum.d" class="id"><div name="measure_sum.d" class=" tooltip">d<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L533' target='_blank'>Source code</a></span></div></span> (<span id="measure_sum.T" class="id"><div name="measure_sum.T" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L533' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d:268">d</a></span>) (<span id="measure_sum.R" class="id"><div name="measure_sum.R" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L533' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span>).<br/>
 <span class="vernacular">Variables</span> (<span id="measure_sum.m" class="id"><div name="measure_sum.m" class=" tooltip">m<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L534' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">{measure</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> set</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.T">T</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> -&gt;</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> \bar</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.R">R</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">}</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#0bbe80633d78a4f277dbfba268ab7c04">^nat</a></span>) (<span id="measure_sum.n" class="id"><div name="measure_sum.n" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L534' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="msum" class="id"><div name="msum" class=" tooltip">msum<span class='tooltip-area'><p>measurable_subset_sigma_subadditive :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="msum" class="id"><div name="msum" class=" tooltip">msum<span class='tooltip-area'><p>subadditive :
 forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
 (set T -> \bar R) -> Prop
 
-measurable_subset_sigma_subadditive is not universe polymorphic
-Arguments measurable_subset_sigma_subadditive [d]%_measure_display_scope
-  [R T] mu%_function_scope
-measurable_subset_sigma_subadditive is transparent
+subadditive is not universe polymorphic
+Arguments subadditive [d]%_measure_display_scope [R T] mu%_function_scope
+subadditive is transparent
 Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.measurable_subset_sigma_subadditive
+            mathcomp.analysis.measure_theory.measure_function.subadditive
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 181, characters 11-46
-content_inum :
-forall [d : measure_display] [T : semiRingOfSetsType d] [R : numFieldType],
-{content set T -> \bar R}%R ->
-set T -> Itv.def ext_num_sem (Itv.Real `[0%Z, +oo[%R)
+library mathcomp.analysis.measure_theory.measure_function, line 172, characters 11-22
+subset_sigma_subadditive :
+forall {T : Type} {R : numFieldType},
+(set T -> \bar R) -> set T -> (set T) ^nat -> Prop
 
-content_inum is not universe polymorphic
-Arguments content_inum [d]%_measure_display_scope 
-  [T R] mu S%_classical_set_scope
-content_inum is transparent
+subset_sigma_subadditive is not universe polymorphic
+Arguments subset_sigma_subadditive {T}%_type_scope 
+  {R} mu%_function_scope A%_classical_set_scope F
+subset_sigma_subadditive is transparent
 Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.content_inum
+            mathcomp.analysis.measure_theory.measure_function.subset_sigma_subadditive
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 291, characters 10-22
+library mathcomp.analysis.measure_theory.measure_function, line 177, characters 11-35
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L536' target='_blank'>Source code</a></span></div></span> (<span id="A:275" class="id"><div name="A:275" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L536' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.T">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.R">R</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#70c6c347670b7d7a821347ad84e9446b">\sum_</a></span>(<span id="k:278" class="id"><span id="k:277" class="id"><span id="k:276" class="id"><div name="k:278" class=" tooltip">k<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L536' target='_blank'>Source code</a></span></div></span></span></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#70c6c347670b7d7a821347ad84e9446b"> &lt;</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#70c6c347670b7d7a821347ad84e9446b"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.n">n</a></span>)<span class="id"><a href="mathcomp.reals.constructive_ereal.html#70c6c347670b7d7a821347ad84e9446b"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_sum.m">m</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#k:276">k</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:275">A</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="measure_sum.msum0" class="id"><div name="measure_sum.msum0" class=" tooltip">msum0<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L538' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#msum">msum</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set0">set0</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id">0</span><br/>
@@ -965,18 +940,18 @@ Qed.</div></details>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> ereal_scope</span>.<br/>
 <span class="vernacular">Context</span><span class="id"> </span><span id="measure_zero.d" class="id"><div name="measure_zero.d" class=" tooltip">d<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L559' target='_blank'>Source code</a></span></div></span> (<span id="measure_zero.T" class="id"><div name="measure_zero.T" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L559' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d:293">d</a></span>) (<span id="measure_zero.R" class="id"><div name="measure_zero.R" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L559' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.numeric_hierarchy.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="mzero" class="id"><div name="mzero" class=" tooltip">mzero<span class='tooltip-area'><p>measure_inum :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="mzero" class="id"><div name="mzero" class=" tooltip">mzero<span class='tooltip-area'><p>measurable_subset_sigma_subadditive :
 forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
-measure T R -> set T -> Itv.def ext_num_sem (Itv.Real `[0%Z, +oo[%R)
+(set T -> \bar R) -> Prop
 
-measure_inum is not universe polymorphic
-Arguments measure_inum [d]%_measure_display_scope 
-  [R T] mu S%_classical_set_scope
-measure_inum is transparent
+measurable_subset_sigma_subadditive is not universe polymorphic
+Arguments measurable_subset_sigma_subadditive [d]%_measure_display_scope
+  [R T] mu%_function_scope
+measurable_subset_sigma_subadditive is transparent
 Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.measure_inum
+            mathcomp.analysis.measure_theory.measure_function.measurable_subset_sigma_subadditive
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 457, characters 10-22
+library mathcomp.analysis.measure_theory.measure_function, line 181, characters 11-46
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L561' target='_blank'>Source code</a></span></div></span> (<span id="A:296" class="id"><div name="A:296" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L561' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_zero.T">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_zero.R">R</a></span><span class="id"> :=</span><span class="id"> 0</span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="measure_zero.mzero0" class="id"><div name="measure_zero.mzero0" class=" tooltip">mzero0<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L563' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mzero">mzero</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set0">set0</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id">0</span><br/>
@@ -1019,17 +994,19 @@ Qed.</div></details>
 <span class="vernacular">Context</span><span class="id"> </span><span id="measure_add.d" class="id"><div name="measure_add.d" class=" tooltip">d<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L587' target='_blank'>Source code</a></span></div></span> (<span id="measure_add.T" class="id"><div name="measure_add.T" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L587' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d:303">d</a></span>) (<span id="measure_add.R" class="id"><div name="measure_add.R" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L587' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span>).<br/>
 <span class="vernacular">Variables</span> (<span id="measure_add.m1" class="id"><div name="measure_add.m1" class=" tooltip">m1<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L588' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="measure_add.m2" class="id"><div name="measure_add.m2" class=" tooltip">m2<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L588' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">{measure</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> set</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.T">T</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> -&gt;</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> \bar</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.R">R</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">}</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="measure_add" class="id"><div name="measure_add" class=" tooltip">measure_add<span class='tooltip-area'><p>msum :
-forall {d : measure_display} {T : sigmaRingType d} {R : realType},
-(measure T R) ^nat -> nat -> set T -> \bar R
+<span class="vernacular">Definition</span><span class="id"> </span><span id="measure_add" class="id"><div name="measure_add" class=" tooltip">measure_add<span class='tooltip-area'><p>content_inum :
+forall [d : measure_display] [T : semiRingOfSetsType d] [R : numFieldType],
+{content set T -> \bar R}%R ->
+set T -> Itv.def ext_num_sem (Itv.Real `[0%Z, +oo[%R)
 
-msum is not universe polymorphic
-Arguments msum {d}%_measure_display_scope {T R} m 
-  n%_nat_scope A%_classical_set_scope
-msum is transparent
-Expands to: Constant mathcomp.analysis.measure_theory.measure_function.msum
+content_inum is not universe polymorphic
+Arguments content_inum [d]%_measure_display_scope 
+  [T R] mu S%_classical_set_scope
+content_inum is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.content_inum
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 536, characters 11-15
+library mathcomp.analysis.measure_theory.measure_function, line 291, characters 10-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L590' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#msum">msum</a></span> (<span class="gallina-kwd">fun</span><span class="id"> </span><span id="n:310" class="id"><div name="n:310" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L590' target='_blank'>Source code</a></span></div></span><span class="id"> =&gt;</span><span class="gallina-kwd"> if</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#n:310">n</a></span><span class="id"> is</span><span class="id"> 0%N</span><span class="gallina-kwd"> then</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.m1">m1</a></span><span class="gallina-kwd"> else</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.m2">m2</a></span>)<span class="id"> 2</span>.<br/>
 <br/>
 <span class="vernacular">Lemma</span><span class="id"> </span><span id="measure_addE" class="id"><div name="measure_addE" class=" tooltip">measure_addE<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L592' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="A:312" class="id"><div name="A:312" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L592' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add">measure_add</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:312">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.m1">m1</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:312">A</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#d4965da372b2485934ec33867ee5fbe7"> +</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#d4965da372b2485934ec33867ee5fbe7"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_add.m2">m2</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:312">A</a></span>.<br/>
@@ -1045,16 +1022,18 @@ library mathcomp.analysis.measure_theory.measure_function, line 536, characters 
 <span class="vernacular">Context</span><span class="id"> </span><span id="measure_scale.d" class="id"><div name="measure_scale.d" class=" tooltip">d<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L599' target='_blank'>Source code</a></span></div></span> (<span id="measure_scale.T" class="id"><div name="measure_scale.T" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L599' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d:313">d</a></span>) (<span id="measure_scale.R" class="id"><div name="measure_scale.R" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L599' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.numeric_hierarchy.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>).<br/>
 <span class="vernacular">Variables</span> (<span id="measure_scale.r" class="id"><div name="measure_scale.r" class=" tooltip">r<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L600' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#6b57a954db0efd6b7fe2f37c706d0c82">{nonneg</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#6b57a954db0efd6b7fe2f37c706d0c82"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.R">R</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#6b57a954db0efd6b7fe2f37c706d0c82">}</a></span>) (<span id="measure_scale.m" class="id"><div name="measure_scale.m" class=" tooltip">m<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L600' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">{measure</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> set</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.T">T</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> -&gt;</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> \bar</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.R">R</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">}</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="mscale" class="id"><div name="mscale" class=" tooltip">mscale<span class='tooltip-area'><p>mzero :
-forall {d : measure_display} {T : sigmaRingType d} {R : realFieldType},
-set T -> \bar R
+<span class="vernacular">Definition</span><span class="id"> </span><span id="mscale" class="id"><div name="mscale" class=" tooltip">mscale<span class='tooltip-area'><p>measure_inum :
+forall [d : measure_display] [R : numFieldType] [T : semiRingOfSetsType d],
+measure T R -> set T -> Itv.def ext_num_sem (Itv.Real `[0%Z, +oo[%R)
 
-mzero is not universe polymorphic
-Arguments mzero {d}%_measure_display_scope {T R} A%_classical_set_scope
-mzero is transparent
-Expands to: Constant mathcomp.analysis.measure_theory.measure_function.mzero
+measure_inum is not universe polymorphic
+Arguments measure_inum [d]%_measure_display_scope 
+  [R T] mu S%_classical_set_scope
+measure_inum is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.measure_inum
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 561, characters 11-16
+library mathcomp.analysis.measure_theory.measure_function, line 457, characters 10-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L602' target='_blank'>Source code</a></span></div></span> (<span id="A:320" class="id"><div name="A:320" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L602' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.T">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.R">R</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.r">r</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.interval_inference.html#1c0324eabc1cbd2d8f3ac221154b0692">%:num</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#bc34d0712444fb7fddc80987d6cdcb61">%:E</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#f1c2ddfea282f8f8d7539f61e14c08e4"> *</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#f1c2ddfea282f8f8d7539f61e14c08e4"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_scale.m">m</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:320">A</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="measure_scale.mscale0" class="id"><div name="measure_scale.mscale0" class=" tooltip">mscale0<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L604' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mscale">mscale</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set0">set0</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id">0</span><br/>
@@ -1093,18 +1072,17 @@ Qed.</div></details>
 <span class="vernacular">Context</span><span class="id"> </span><span id="measure_series.d" class="id"><div name="measure_series.d" class=" tooltip">d<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L628' target='_blank'>Source code</a></span></div></span> (<span id="measure_series.T" class="id"><div name="measure_series.T" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L628' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d:336">d</a></span>) (<span id="measure_series.R" class="id"><div name="measure_series.R" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L628' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.reals.html#Real.Exports.realType">realType</a></span>).<br/>
 <span class="vernacular">Variables</span> (<span id="measure_series.m" class="id"><div name="measure_series.m" class=" tooltip">m<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L629' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">{measure</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> set</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.T">T</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> -&gt;</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> \bar</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.R">R</a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#cab9a9776ae9e3a4c36de416efb30851">}</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#0bbe80633d78a4f277dbfba268ab7c04">^nat</a></span>) (<span id="measure_series.n" class="id"><div name="measure_series.n" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L629' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="mseries" class="id"><div name="mseries" class=" tooltip">mseries<span class='tooltip-area'><p>measure_add :
-forall [d : measure_display] [T : sigmaRingType d] [R : realType],
-measure T R -> measure T R -> set T -> \bar R
+<span class="vernacular">Definition</span><span class="id"> </span><span id="mseries" class="id"><div name="mseries" class=" tooltip">mseries<span class='tooltip-area'><p>msum :
+forall {d : measure_display} {T : sigmaRingType d} {R : realType},
+(measure T R) ^nat -> nat -> set T -> \bar R
 
-measure_add is not universe polymorphic
-Arguments measure_add [d]%_measure_display_scope [T R] 
-  m1 m2 A%_classical_set_scope
-measure_add is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.measure_add
+msum is not universe polymorphic
+Arguments msum {d}%_measure_display_scope {T R} m 
+  n%_nat_scope A%_classical_set_scope
+msum is transparent
+Expands to: Constant mathcomp.analysis.measure_theory.measure_function.msum
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 590, characters 11-22
+library mathcomp.analysis.measure_theory.measure_function, line 536, characters 11-15
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L631' target='_blank'>Source code</a></span></div></span> (<span id="A:343" class="id"><div name="A:343" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L631' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.T">T</a></span>)<span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.R">R</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.sequences.html#1fb3ae4179bc3e70682d81db7993c1d4">\sum_</a></span>(<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.n">n</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#1fb3ae4179bc3e70682d81db7993c1d4"> &lt;=</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#1fb3ae4179bc3e70682d81db7993c1d4"> </a></span><span id="k:346" class="id"><span id="k:345" class="id"><span id="k:344" class="id"><div name="k:346" class=" tooltip">k<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L631' target='_blank'>Source code</a></span></div></span></span></span><span class="id"><a href="mathcomp.analysis.sequences.html#1fb3ae4179bc3e70682d81db7993c1d4"> &lt;oo</a></span>)<span class="id"><a href="mathcomp.analysis.sequences.html#1fb3ae4179bc3e70682d81db7993c1d4"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#measure_series.m">m</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#k:344">k</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:343">A</a></span>.<br/>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="measure_series.mseries0" class="id"><div name="measure_series.mseries0" class=" tooltip">mseries0<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L633' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mseries">mseries</a></span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set0">set0</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id">0</span>.<br/>
@@ -1144,16 +1122,28 @@ Qed.</div></details>
 <span class="vernacular">End</span><span class="id"> measure_series</span>.<br/>
 <span class="vernacular">Arguments</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#mseries">mseries</a></span><span class="id"> {d</span><span class="id"> T</span><span class="id"> R}</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="pushforward" class="id"><div name="pushforward" class=" tooltip">pushforward<span class='tooltip-area'><p>mscale :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="pushforward" class="id"><div name="pushforward" class=" tooltip">pushforward<span class='tooltip-area'><p>mzero :
 forall {d : measure_display} {T : sigmaRingType d} {R : realFieldType},
-{nonneg R}%R -> measure T R -> set T -> \bar R
+set T -> \bar R
 
-mscale is not universe polymorphic
-Arguments mscale {d}%_measure_display_scope {T R} r m A%_classical_set_scope
-mscale is transparent
-Expands to: Constant mathcomp.analysis.measure_theory.measure_function.mscale
+mzero is not universe polymorphic
+Arguments mzero {d}%_measure_display_scope {T R} A%_classical_set_scope
+mzero is transparent
+Expands to: Constant mathcomp.analysis.measure_theory.measure_function.mzero
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 602, characters 11-17
+library mathcomp.analysis.measure_theory.measure_function, line 561, characters 11-16
+measure_add :
+forall [d : measure_display] [T : sigmaRingType d] [R : realType],
+measure T R -> measure T R -> set T -> \bar R
+
+measure_add is not universe polymorphic
+Arguments measure_add [d]%_measure_display_scope [T R] 
+  m1 m2 A%_classical_set_scope
+measure_add is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.measure_add
+Declared in
+library mathcomp.analysis.measure_theory.measure_function, line 590, characters 11-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L662' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="d1:393" class="id"><div name="d1:393" class=" tooltip">d1<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L662' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="d2:394" class="id"><div name="d2:394" class=" tooltip">d2<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L662' target='_blank'>Source code</a></span></div></span> (<span id="T1:395" class="id"><div name="T1:395" class=" tooltip">T1<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L662' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d1:393">d1</a></span>) (<span id="T2:396" class="id"><div name="T2:396" class=" tooltip">T2<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L662' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#SigmaRing.Exports.sigmaRingType">sigmaRingType</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#d2:394">d2</a></span>)<br/>
 &nbsp;&nbsp;(<span id="R:397" class="id"><div name="R:397" class=" tooltip">R<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L663' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.numeric_hierarchy.numfield.html#Num.RealField.Exports.realFieldType">realFieldType</a></span>) (<span id="m:398" class="id"><div name="m:398" class=" tooltip">m<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L663' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T1:395">T1</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3">\bar</a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#4c9ddfb63ff52527d9adecfde4a667c3"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#R:397">R</a></span>) (<span id="f:399" class="id"><div name="f:399" class=" tooltip">f<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L663' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T1:395">T1</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T2:396">T2</a></span>)<br/>
 &nbsp;&nbsp;<span class="id">:=</span><span class="gallina-kwd"> fun</span><span class="id"> </span><span id="A:400" class="id"><div name="A:400" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L664' target='_blank'>Source code</a></span></div></span><span class="id"> =&gt;</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#m:398">m</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#f:399">f</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#9017aea2311f0e1b346e16db298ca58c"> @^-1`</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#9017aea2311f0e1b346e16db298ca58c"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:400">A</a></span>).<br/>
@@ -1196,7 +1186,18 @@ Qed.</div></details>
 <span class="vernacular">End</span><span class="id"> pushforward_measure</span>.<br/>
 <br/>
 <span class="vernacular">Module</span><span class="id"> </span><span id="SetRing" class="id"><div name="SetRing" class=" tooltip">SetRing<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L695' target='_blank'>Source code</a></span></div></span>.<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.type" class="id"><div name="SetRing.type" class=" tooltip">type<span class='tooltip-area'><p>mseries :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.type" class="id"><div name="SetRing.type" class=" tooltip">type<span class='tooltip-area'><p>mscale :
+forall {d : measure_display} {T : sigmaRingType d} {R : realFieldType},
+{nonneg R}%R -> measure T R -> set T -> \bar R
+
+mscale is not universe polymorphic
+Arguments mscale {d}%_measure_display_scope {T R} r m A%_classical_set_scope
+mscale is transparent
+Expands to: Constant mathcomp.analysis.measure_theory.measure_function.mscale
+Declared in
+library mathcomp.analysis.measure_theory.measure_function, line 602, characters 11-17
+</p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L696' target='_blank'>Source code</a></span></div></span> (<span id="T:415" class="id"><div name="T:415" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L696' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="gallina-kwd"> Type</span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T:415">T</a></span>.<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.display" class="id"><div name="SetRing.display" class=" tooltip">display<span class='tooltip-area'><p>mseries :
 forall {d : measure_display} {T : sigmaRingType d} {R : realType},
 (measure T R) ^nat -> nat -> set T -> \bar R
 
@@ -1208,20 +1209,6 @@ Expands to: Constant
             mathcomp.analysis.measure_theory.measure_function.mseries
 Declared in
 library mathcomp.analysis.measure_theory.measure_function, line 631, characters 11-18
-</p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L696' target='_blank'>Source code</a></span></div></span> (<span id="T:415" class="id"><div name="T:415" class=" tooltip">T<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L696' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="gallina-kwd"> Type</span>)<span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#T:415">T</a></span>.<br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.display" class="id"><div name="SetRing.display" class=" tooltip">display<span class='tooltip-area'><p>pushforward :
-forall {d1 d2 : measure_display} {T1 : sigmaRingType d1}
-  {T2 : sigmaRingType d2} {R : realFieldType},
-(set T1 -> \bar R) -> (T1 -> T2) -> set T2 -> \bar R
-
-pushforward is not universe polymorphic
-Arguments pushforward {d1 d2}%_measure_display_scope 
-  {T1 T2 R} (m f)%_function_scope A%_classical_set_scope
-pushforward is transparent
-Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.pushforward
-Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 662, characters 11-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L697' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measure_display">measure_display</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measure_display">measure_display</a></span><br/>
 <details>
 <summary class="toggleproof">Proof.</summary>
@@ -1243,15 +1230,19 @@ library mathcomp.analysis.measure_theory.measure_function, line 662, characters 
 <span class="vernacular">Local</span><span class="vernacular"> Notation</span> <span id="SetRing.SetRing.:::x_'.-ring.-measurable'" class="id"><div name="SetRing.SetRing.:::x_'.-ring.-measurable'" class=" tooltip">&quot;d .-ring.-measurable&quot;<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L711' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;((<span class="id">d%mdisp</span>.<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#SetRing.SetRing.:::x_'.-ring'">-ring</a></span>).<span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#::classical_set_scope:x_'.-measurable'">-measurable</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span> (<span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#SetRing.type">type</a></span><span class="id"> _</span>)).<br/>
 <br/>
-<span class="vernacular">Local</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="SetRing.measurable_fin_trivIset" class="id"><div name="SetRing.measurable_fin_trivIset" class=" tooltip">measurable_fin_trivIset<span class='tooltip-area'><p>SetRing.type : Type -> Type
+<span class="vernacular">Local</span><span class="vernacular"> Definition</span><span class="id"> </span><span id="SetRing.measurable_fin_trivIset" class="id"><div name="SetRing.measurable_fin_trivIset" class=" tooltip">measurable_fin_trivIset<span class='tooltip-area'><p>pushforward :
+forall {d1 d2 : measure_display} {T1 : sigmaRingType d1}
+  {T2 : sigmaRingType d2} {R : realFieldType},
+(set T1 -> \bar R) -> (T1 -> T2) -> set T2 -> \bar R
 
-SetRing.type is not universe polymorphic
-Arguments SetRing.type T%_type_scope
-SetRing.type is transparent
+pushforward is not universe polymorphic
+Arguments pushforward {d1 d2}%_measure_display_scope 
+  {T1 T2 R} (m f)%_function_scope A%_classical_set_scope
+pushforward is transparent
 Expands to: Constant
-            mathcomp.analysis.measure_theory.measure_function.SetRing.type
+            mathcomp.analysis.measure_theory.measure_function.pushforward
 Declared in
-library mathcomp.analysis.measure_theory.measure_function, line 696, characters 11-15
+library mathcomp.analysis.measure_theory.measure_function, line 662, characters 11-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L714' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#SetRing.SetRing.T">T</a></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9">[set</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span id="A:418" class="id"><div name="A:418" class=" tooltip">A<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L715' target='_blank'>Source code</a></span></div></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> |</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#075f2dd209aa707f1415a58a026b96d9"> </a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">exists</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"> </a></span><span id="B:419" class="id"><div name="B:419" class=" tooltip">B<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L715' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set_system">set_system</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#SetRing.SetRing.T">T</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#a883bdd010993579f99d60b3775bcf54">,</a></span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#554fc3f3cf0a27fe0863b7741d119014">[/\</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#554fc3f3cf0a27fe0863b7741d119014"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#A:418">A</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> =</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55">\bigcup_</a></span>(<span id="X:420" class="id"><div name="X:420" class=" tooltip">X<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L716' target='_blank'>Source code</a></span></div></span><span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> in</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#B:419">B</a></span>)<span class="id"><a href="mathcomp.classical.classical_sets.html#6c1866a3b78974b64276da9cd4d63a55"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#X:420">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#554fc3f3cf0a27fe0863b7741d119014">,</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#554fc3f3cf0a27fe0863b7741d119014"> </a></span><span class="gallina-kwd">forall</span><span class="id"> </span><span id="X:421" class="id"><div name="X:421" class=" tooltip">X<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_function.v#L716' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#SetRing.SetRing.T">T</a></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#B:419">B</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#X:421">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> -&gt;</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Logic.html#::type_scope:x_'-&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measurable">measurable</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_function.html#X:421">X</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#554fc3f3cf0a27fe0863b7741d119014">,</a></span><br/>
@@ -1337,7 +1328,16 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> </span><span class="id"><a href="mathcomp.classical.classical_sets.html#notin_setE">notin_setE</a></span><span class="id">/=</span><span class="id"> =&gt;</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#negP">negP</a></span><span class="id">/</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#negPn">negPn</a></span><span class="id">/</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.boot.eqtype.html#eqP">eqP</a></span>.<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.decomp" class="id"><div name="SetRing.decomp" class=" tooltip">decomp<span class='tooltip-area'><p>SetRing.display : measure_display -> measure_display
+<span class="vernacular">Definition</span><span class="id"> </span><span id="SetRing.decomp" class="id"><div name="SetRing.decomp" class=" tooltip">decomp<span class='tooltip-area'><p>SetRing.type : Type -> Type
+
+SetRing.type is not universe polymorphic
+Arguments SetRing.type T%_type_scope
+SetRing.type is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_function.SetRing.type
+Declared in
+library mathcomp.analysis.measure_theory.measure_function, line 696, characters 11-15
+SetRing.display : measure_display -> measure_display
 
 SetRing.display is not universe polymorphic
 Arguments SetRing.display _%_measure_display_scope
