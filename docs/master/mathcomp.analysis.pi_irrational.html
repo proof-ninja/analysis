@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.pi_irrational</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.07-19:16" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.08-18:58" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -290,17 +290,17 @@ Qed.</div></details>
 <span class="vernacular">Variables</span><span class="id"> </span><span id="pi_irrational.algebraic_part.na" class="id"><div name="pi_irrational.algebraic_part.na" class=" tooltip">na<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L48' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="pi_irrational.algebraic_part.nb" class="id"><div name="pi_irrational.algebraic_part.nb" class=" tooltip">nb<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L48' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="pi_irrational.algebraic_part.n" class="id"><div name="pi_irrational.algebraic_part.n" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L48' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#nat">nat</a></span>.<br/>
 <span class="vernacular">Hypothesis</span><span class="id"> </span><span id="pi_irrational.algebraic_part.nb0" class="id"><div name="pi_irrational.algebraic_part.nb0" class=" tooltip">nb0<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L49' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.algebraic_part.nb">nb</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.boot.eqtype.html#c385a484ee9d1b4e0615924561a9b75e"> !=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.boot.eqtype.html#c385a484ee9d1b4e0615924561a9b75e"> </a></span><span class="id">0%N</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="pi_irrational.a" class="id"><div name="pi_irrational.a" class=" tooltip">a<span class='tooltip-area'><p>locked_asin :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="pi_irrational.a" class="id"><div name="pi_irrational.a" class=" tooltip">a<span class='tooltip-area'><p>atan_unlock_subterm :
 unlockable
   (fun (R : realType) (x : R) =>
-   [get x0 : _ | [set y | (- (trigo.pi / 2) <= y <= trigo.pi / 2)%R /\
-                          sin y = x]%classic
+   [get x0 : _ | [set y | (- (trigo.pi / 2) < y < trigo.pi / 2)%R /\
+                          tan y = x]%classic
                    x0])
 
-locked_asin is not universe polymorphic
-locked_asin is transparent
-Expands to: Constant mathcomp.analysis.trigo.locked_asin
-Declared in library mathcomp.analysis.trigo, line 1000, characters 10-21
+atan_unlock_subterm is not universe polymorphic
+atan_unlock_subterm is transparent
+Expands to: Constant mathcomp.analysis.trigo.atan_unlock_subterm
+Declared in library mathcomp.analysis.trigo, line 1098, characters 0-106
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L51' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.algebraic_part.R">R</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.algebraic_part.na">na</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#6411ed08724033ae48d2865f0380d533">%:R</a></span>.<br/>
 <br/>
 <span class="vernacular">Definition</span><span class="id"> </span><span id="pi_irrational.b" class="id"><div name="pi_irrational.b" class=" tooltip">b<span class='tooltip-area'><p>atan_unlock_subterm :
@@ -546,17 +546,17 @@ Qed.</div></details>
 <span class="gallina-kwd">by</span><span class="id"> rewrite</span><span class="id"> [X</span><span class="gallina-kwd"> in</span><span class="id"> _</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#c7f78cf1f6a5e4f664654f7d671ca752"> +</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#c7f78cf1f6a5e4f664654f7d671ca752"> </a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#X:47">X</a></span><span class="id">]</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#GRing.Theory.mulrC">mulrC</a></span><span class="id"> -</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#GRing.Theory.mulrDl">mulrDl</a></span><span class="id"> -</span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#hornerD">hornerD</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#GRing.Theory.addrC">addrC</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.D2FDF">D2FDF</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.R">R</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.na">na</a></span><span class="id"> _</span><span class="id"> n</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.nb0">nb0</a></span>).<br/>
 Qed.</div></details>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="pi_irrational.intfsin" class="id"><div name="pi_irrational.intfsin" class=" tooltip">intfsin<span class='tooltip-area'><p>atan_unlock_subterm :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="pi_irrational.intfsin" class="id"><div name="pi_irrational.intfsin" class=" tooltip">intfsin<span class='tooltip-area'><p>locked_atan :
 unlockable
   (fun (R : realType) (x : R) =>
    [get x0 : _ | [set y | (- (trigo.pi / 2) < y < trigo.pi / 2)%R /\
                           tan y = x]%classic
                    x0])
 
-atan_unlock_subterm is not universe polymorphic
-atan_unlock_subterm is transparent
-Expands to: Constant mathcomp.analysis.trigo.atan_unlock_subterm
-Declared in library mathcomp.analysis.trigo, line 1098, characters 0-106
+locked_atan is not universe polymorphic
+locked_atan is transparent
+Expands to: Constant mathcomp.analysis.trigo.locked_atan
+Declared in library mathcomp.analysis.trigo, line 1100, characters 10-21
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L215' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="n:48" class="id"><div name="n:48" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L215' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_Rintegral.html#00afd7077fe8d4381a047ef487700a85">\int[</a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.mu">mu</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_Rintegral.html#00afd7077fe8d4381a047ef487700a85">]_</a></span>(<span id="x:49" class="id"><div name="x:49" class=" tooltip">x<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L215' target='_blank'>Source code</a></span></div></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_Rintegral.html#00afd7077fe8d4381a047ef487700a85"> in</a></span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_Rintegral.html#00afd7077fe8d4381a047ef487700a85"> </a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#0d46aeacdf83c1ab2ebf3404fa8daa4b">`[</a></span><span class="id">0</span><span class="id"><a href="mathcomp.classical.classical_sets.html#0d46aeacdf83c1ab2ebf3404fa8daa4b">,</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#0d46aeacdf83c1ab2ebf3404fa8daa4b"> </a></span><span class="id"><a href="mathcomp.analysis.trigo.html#pi">pi</a></span><span class="id"><a href="mathcomp.classical.classical_sets.html#0d46aeacdf83c1ab2ebf3404fa8daa4b">]</a></span>) (<span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.fsin">fsin</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#n:48">n</a></span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#x:49">x</a></span>).<br/>
 <br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> classical_set_scope</span>.<br/>
@@ -569,24 +569,20 @@ Declared in library mathcomp.analysis.trigo, line 1098, characters 0-106
 <span class="gallina-kwd">by</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.normed_module.html#cvgM">cvgM</a></span><span class="id"> =&gt;</span><span class="id"> /=;</span><span class="id"> [exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.derive.html#continuous_horner">continuous_horner</a></span><span class="id">|exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.trigo.html#continuous_sin">continuous_sin</a></span><span class="id">]</span>.<br/>
 Qed.</div></details>
 <br/>
-<span id="pi_irrational.Unnamed_thm" class="id"><div name="pi_irrational.Unnamed_thm" class=" tooltip">Goal<span class='tooltip-area'><p>locked_atan :
-unlockable
-  (fun (R : realType) (x : R) =>
-   [get x0 : _ | [set y | (- (trigo.pi / 2) < y < trigo.pi / 2)%R /\
-                          tan y = x]%classic
-                   x0])
-
-locked_atan is not universe polymorphic
-locked_atan is transparent
-Expands to: Constant mathcomp.analysis.trigo.locked_atan
-Declared in library mathcomp.analysis.trigo, line 1100, characters 10-21
-</p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span><span id="pi_irrational.Unnamed_thm" class="id"><div name="pi_irrational.Unnamed_thm" class=" tooltip"> forall<span class='tooltip-area'><p>oneDsqr : forall {R : realType}, R -> R
+<span id="pi_irrational.Unnamed_thm" class="id"><div name="pi_irrational.Unnamed_thm" class=" tooltip">Goal<span class='tooltip-area'><p>oneDsqr : forall {R : realType}, R -> R
 
 oneDsqr is not universe polymorphic
 Arguments oneDsqr {R} x%_ring_scope
 oneDsqr is transparent
 Expands to: Constant mathcomp.analysis.trigo.oneDsqr
 Declared in library mathcomp.analysis.trigo, line 1106, characters 11-18
+</p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span><span id="pi_irrational.Unnamed_thm" class="id"><div name="pi_irrational.Unnamed_thm" class=" tooltip"> forall<span class='tooltip-area'><p>oneDsqr_inum : forall {R : realType}, R -> {itv R & `[1%Z, +oo[%R}
+
+oneDsqr_inum is not universe polymorphic
+Arguments oneDsqr_inum {R} x%_ring_scope
+oneDsqr_inum is transparent
+Expands to: Constant mathcomp.analysis.trigo.oneDsqr_inum
+Declared in library mathcomp.analysis.trigo, line 1114, characters 10-22
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span> (<span id="p:52" class="id"><div name="p:52" class=" tooltip">p<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#da9f755b2dd01d49956ac8b6f40c9c5d">{poly</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#da9f755b2dd01d49956ac8b6f40c9c5d"> </a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#pi_irrational.analytic_part.R">R</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#da9f755b2dd01d49956ac8b6f40c9c5d">}</a></span>)<span class="id"> </span><span id="c:53" class="id"><div name="c:53" class=" tooltip">c<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span><span class="id">,</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#p:52">p</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#e4361ce58e4de0a4b9786d0011b61316">[</a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#x:54">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#e4361ce58e4de0a4b9786d0011b61316">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> @[</a></span><span id="x:54" class="id"><div name="x:54" class=" tooltip">x<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/pi_irrational.v#L225' target='_blank'>Source code</a></span></div></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f"> </a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#c:53">c</a></span><span class="id"><a href="mathcomp.analysis.topology_theory.num_topology.html#02fa8d8231c69eb0b6a7453874088890">^'+</a></span><span class="id"><a href="mathcomp.classical.filter.html#9ae20bc67dba0e37ea0806b2f353bb2f">]</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> --&gt;</a></span><span class="id"><a href="mathcomp.classical.filter.html#::classical_set_scope:x_'--&gt;'_x"> </a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#p:52">p</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#e4361ce58e4de0a4b9786d0011b61316">[</a></span><span class="id"><a href="mathcomp.analysis.pi_irrational.html#c:53">c</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_5_0/mathcomp.algebra.poly.html#e4361ce58e4de0a4b9786d0011b61316">]</a></span>.<br/>
 <span class="gallina-kwd">by</span><span class="id"> move=&gt;</span><span class="id"> p</span><span class="id"> c;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.normedtype_theory.pseudometric_normed_Zmodule.html#cvg_at_right_filter">cvg_at_right_filter</a></span><span class="id">;</span><span class="id"> exact:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.derive.html#continuous_horner">continuous_horner</a></span>.<br/>
 <br/>
