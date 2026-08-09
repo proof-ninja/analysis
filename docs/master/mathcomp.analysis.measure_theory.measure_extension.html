@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.measure_theory.measure_extension</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.08-18:58" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 8d9538a 2026.08.09-19:01" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -1060,7 +1060,19 @@ Qed.</div></details>
 <br/>
 <span class="vernacular">Let</span><span class="id"> </span><span id="measure_extension.I" class="id"><div name="measure_extension.I" class=" tooltip">I<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/8d9538acc348d7079d2b5b3abc8c68992a327893/theories/measure_theory/measure_extension.v#L723' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#Measurable.Exports.measurableType">measurableType</a></span><span class="id"> _</span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#g_sigma_algebraType">g_sigma_algebraType</a></span> (<span class="id">@</span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_structure.html#measurable">measurable</a></span><span class="id"> _</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measure_extension.html#measure_extension.T">T</a></span>).<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="measure_extension" class="id"><div name="measure_extension" class=" tooltip">measure_extension<span class='tooltip-area'><p>measurable_cover :
+<span class="vernacular">Definition</span><span class="id"> </span><span id="measure_extension" class="id"><div name="measure_extension" class=" tooltip">measure_extension<span class='tooltip-area'><p>caratheodory_measure :
+forall {R : realType} {T : choiceType}
+  (mu : {outer_measure set T -> \bar R}%R),
+set (caratheodory_type (R:=R) (T:=T) mu) -> \bar R
+
+caratheodory_measure is not universe polymorphic
+Arguments caratheodory_measure {R T} mu _%_classical_set_scope
+caratheodory_measure is transparent
+Expands to: Constant
+            mathcomp.analysis.measure_theory.measure_extension.caratheodory_measure
+Declared in
+library mathcomp.analysis.measure_theory.measure_extension, line 421, characters 11-31
+measurable_cover :
 forall [d : measure_display] [T : semiRingOfSetsType d],
 set T -> set (set T) ^nat
 
