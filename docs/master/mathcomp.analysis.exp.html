@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.exp</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 921d430 2026.09.18-20:48" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 921d430 2026.09.19-20:25" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -1909,20 +1909,6 @@ Arguments ln {R} x%_ring_scope
 ln is transparent
 Expands to: Constant mathcomp.analysis.exp.ln
 Declared in library mathcomp.analysis.exp, line 691, characters 11-13
-powR : forall {R : realType}, R -> R -> R
-
-powR is not universe polymorphic
-Arguments powR {R} (a x)%_ring_scope
-powR is transparent
-Expands to: Constant mathcomp.analysis.exp.powR
-Declared in library mathcomp.analysis.exp, line 827, characters 11-15
-powR_itv : Itv.t -> Itv.t
-
-powR_itv is not universe polymorphic
-Arguments powR_itv i
-powR_itv is transparent
-Expands to: Constant mathcomp.analysis.exp.powR_itv
-Declared in library mathcomp.analysis.exp, line 1059, characters 11-19
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1266' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="x:410" class="id"><div name="x:410" class=" tooltip">x<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1266' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="r:411" class="id"><div name="r:411" class=" tooltip">r<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1266' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span><br/>
 &nbsp;&nbsp;<span class="gallina-kwd">match</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#x:410">x</a></span><span class="gallina-kwd"> with</span><br/>
 &nbsp;&nbsp;<span class="id">|</span><span class="id"> x'</span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#bc34d0712444fb7fddc80987d6cdcb61">%:E</a></span><span class="id"> =&gt;</span> (<span class="id">x'</span><span class="id"><a href="mathcomp.analysis.exp.html#51f8cc9015183e43890674598ff323a0"> `^</a></span><span class="id"><a href="mathcomp.analysis.exp.html#51f8cc9015183e43890674598ff323a0"> </a></span><span class="id"><a href="mathcomp.analysis.exp.html#r:411">r</a></span>)<span class="id"><a href="mathcomp.reals.constructive_ereal.html#bc34d0712444fb7fddc80987d6cdcb61">%:E</a></span><br/>
@@ -2117,16 +2103,20 @@ Qed.</div></details>
 <div class="proofscript">
 <span class="gallina-kwd"> by</span><span class="id"> rewrite</span><span class="id"> -!</span><span class="id"><a href="mathcomp.analysis.exp.html#poweRrM">poweRrM</a></span><span class="id"> </span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#GRing.Theory.mulrC">mulrC</a></span>. Qed.</div></details>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="poweRD_def" class="id"><div name="poweRD_def" class=" tooltip">poweRD_def<span class='tooltip-area'><p>powR_inum :
-forall {R : realType} [i : Itv.t],
-Itv.def (Itv.num_sem (R:=R)) i ->
-R -> Itv.def (Itv.num_sem (R:=R)) (powR_itv i)
+<span class="vernacular">Definition</span><span class="id"> </span><span id="poweRD_def" class="id"><div name="poweRD_def" class=" tooltip">poweRD_def<span class='tooltip-area'><p>powR : forall {R : realType}, R -> R -> R
 
-powR_inum is not universe polymorphic
-Arguments powR_inum {R} [i] x p%_ring_scope
-powR_inum is transparent
-Expands to: Constant mathcomp.analysis.exp.powR_inum
-Declared in library mathcomp.analysis.exp, line 1079, characters 10-19
+powR is not universe polymorphic
+Arguments powR {R} (a x)%_ring_scope
+powR is transparent
+Expands to: Constant mathcomp.analysis.exp.powR
+Declared in library mathcomp.analysis.exp, line 827, characters 11-15
+powR_itv : Itv.t -> Itv.t
+
+powR_itv is not universe polymorphic
+Arguments powR_itv i
+powR_itv is transparent
+Expands to: Constant mathcomp.analysis.exp.powR_itv
+Declared in library mathcomp.analysis.exp, line 1059, characters 11-19
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1399' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="x:462" class="id"><div name="x:462" class=" tooltip">x<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1399' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="r:463" class="id"><div name="r:463" class=" tooltip">r<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1399' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="s:464" class="id"><div name="s:464" class=" tooltip">s<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1399' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span> ((<span class="id"><a href="mathcomp.analysis.exp.html#r:463">r</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#c7f78cf1f6a5e4f664654f7d671ca752"> +</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#c7f78cf1f6a5e4f664654f7d671ca752"> </a></span><span class="id"><a href="mathcomp.analysis.exp.html#s:464">s</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0</span>)<span class="id">%R</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#a133e82bab56729f895f9b2b31e837cd"> ==&gt;</a></span><br/>
 &nbsp;&nbsp;((<span class="id"><a href="mathcomp.analysis.exp.html#x:462">x</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#c385a484ee9d1b4e0615924561a9b75e"> !=</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#c385a484ee9d1b4e0615924561a9b75e"> </a></span><span class="id">0</span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> ((<span class="id"><a href="mathcomp.analysis.exp.html#x:462">x</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#3e06de6f13eb7ecdd29eb40f81d36f3f"> \isn't</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#3e06de6f13eb7ecdd29eb40f81d36f3f"> a</a></span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#3e06de6f13eb7ecdd29eb40f81d36f3f"> </a></span><span class="id"><a href="mathcomp.reals.constructive_ereal.html#fin_num">fin_num</a></span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssrbool.html#a133e82bab56729f895f9b2b31e837cd"> ==&gt;</a></span> (<span class="id"><a href="mathcomp.analysis.exp.html#r:463">r</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0%R</span>)<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.Init.Datatypes.html#::bool_scope:x_'&amp;&amp;'_x"> &amp;&amp;</a></span> (<span class="id"><a href="mathcomp.analysis.exp.html#s:464">s</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> ==</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.eqtype.html#df45e8c2e8370fd4f0f7c4fdaf208180"> </a></span><span class="id">0%R</span>)))).<br/>
 <span class="vernacular">Notation</span> <span id="46e8f40dc002cbe7aeb866b70e141961" class="id"><div name="46e8f40dc002cbe7aeb866b70e141961" class=" tooltip">&quot;x '`^?' ( r +? s )&quot;<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1401' target='_blank'>Source code</a></span></div></span><span class="id"> :=</span> (<span class="id"><a href="mathcomp.analysis.exp.html#poweRD_def">poweRD_def</a></span><span class="id"> x</span><span class="id"> r</span><span class="id"> s</span>)<span class="id"> :</span><span class="id"> ereal_scope</span>.<br/>
@@ -2212,13 +2202,16 @@ Qed.</div></details>
 <span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> a</span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#riemannR_series.R">R</a></span>.<br/>
 <span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> real_scope</span>.<br/>
 <br/>
-<span class="vernacular">Definition</span><span class="id"> </span><span id="riemannR" class="id"><div name="riemannR" class=" tooltip">riemannR<span class='tooltip-area'><p>lne : forall {R : realType}, \bar R -> \bar R
+<span class="vernacular">Definition</span><span class="id"> </span><span id="riemannR" class="id"><div name="riemannR" class=" tooltip">riemannR<span class='tooltip-area'><p>powR_inum :
+forall {R : realType} [i : Itv.t],
+Itv.def (Itv.num_sem (R:=R)) i ->
+R -> Itv.def (Itv.num_sem (R:=R)) (powR_itv i)
 
-lne is not universe polymorphic
-Arguments lne {R} x%_ereal_scope
-lne is transparent
-Expands to: Constant mathcomp.analysis.exp.lne
-Declared in library mathcomp.analysis.exp, line 1152, characters 11-14
+powR_inum is not universe polymorphic
+Arguments powR_inum {R} [i] x p%_ring_scope
+powR_inum is transparent
+Expands to: Constant mathcomp.analysis.exp.powR_inum
+Declared in library mathcomp.analysis.exp, line 1079, characters 10-19
 </p><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1460' target='_blank'>Source code</a></span></div></span><span class="id"> </span><span id="a:491" class="id"><div name="a:491" class=" tooltip">a<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1460' target='_blank'>Source code</a></span></div></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#riemannR_series.R">R</a></span><span class="id"><a href="mathcomp.analysis.sequences.html#0bbe80633d78a4f277dbfba268ab7c04"> ^nat</a></span><span class="id"> :=</span><span class="gallina-kwd"> fun</span><span class="id"> </span><span id="n:492" class="id"><div name="n:492" class=" tooltip">n<span class='tooltip-area'><hr/><a href='https://github.com/math-comp/analysis/tree/921d4308101175617f4425de645ce81c4da89c41/theories/exp.v#L1460' target='_blank'>Source code</a></span></div></span><span class="id"> =&gt;</span> (<span class="id"><a href="mathcomp.analysis.exp.html#n:492">n</a></span>.<span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.boot.ssrnat.html#bda89d73ec4a8f23ae92b565ffb5aaa6">+1</a></span><span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html#6411ed08724033ae48d2865f0380d533">%:R</a></span><span class="id"><a href="mathcomp.analysis.exp.html#51f8cc9015183e43890674598ff323a0"> `^</a></span><span class="id"><a href="mathcomp.analysis.exp.html#51f8cc9015183e43890674598ff323a0"> </a></span><span class="id"><a href="mathcomp.analysis.exp.html#a:491">a</a></span>)<span class="id"><a href="https://math-comp.github.io/htmldoc_2_6_0/mathcomp.algebra.algebraic_hierarchy.divalg.html#4e5a4c91ec0aa12de06dfe1cc07ea126">^-1</a></span>.<br/>
 <span class="vernacular">Arguments</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.exp.html#riemannR">riemannR</a></span><span class="id"> a</span><span class="id"> n</span><span class="id"> /</span>.<br/>
 <br/>
