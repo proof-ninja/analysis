@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Module mathcomp.analysis.probability_theory.normal_distribution</title>
-<meta name="description" content="Documentation of Coq module Mathcomp Analysis 921d430 2026.09.28-23:16" />
+<meta name="description" content="Documentation of Coq module Mathcomp Analysis 921d430 2026.09.29-22:13" />
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/markdown-it-deflist/dist/markdown-it-deflist.min.js"></script>
@@ -987,7 +987,7 @@ Qed.</div></details>
 <details>
 <summary class="toggleproof">Proof.</summary>
 <div class="proofscript">
-<span class="id">move=&gt;</span><span class="id"> mU</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html#a686f16c7fee28a2e0daca8726c6780b">[dup]</a></span><span class="id"> intf</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#integrableP">integrableP</a></span><span class="id">[mf</span><span class="id"> intf_lty]</span>.<br/>
+<span class="id">move=&gt;</span><span class="id"> mU</span><span class="id"> /</span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect_rw.html#a686f16c7fee28a2e0daca8726c6780b">[dup]</a></span><span class="id"> intf</span><span class="id"> /</span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integrable.html#integrableP">integrableP</a></span><span class="id">[mf</span><span class="id"> intf_lty]</span>.<br/>
 <span class="id">rewrite</span><span class="id"> -</span>(<span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.radon_nikodym.html#Radon_Nikodym_change_of_variables">Radon_Nikodym_change_of_variables</a></span> (<span class="id"><a href="mathcomp.analysis.probability_theory.normal_distribution.html#normal_prob_dominates">normal_prob_dominates</a></span><span class="id"> m</span><span class="id"> s</span>))<span class="id">//=</span>.<br/>
 <span class="id">apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.lebesgue_integral_nonneg.html#ae_eq_integral">ae_eq_integral</a></span><span class="id"> =&gt;</span><span class="id"> //=</span>.<br/>
 <span class="id">-</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.lebesgue_integral_theory.measurable_fun_approximation.html#emeasurable_funM">emeasurable_funM</a></span><span class="id"> =&gt;</span><span class="id"> //;</span><span class="id"> apply:</span><span class="id"> </span><span class="id"><a href="mathcomp.analysis.measure_theory.measurable_function.html#measurable_funTS">measurable_funTS</a></span><span class="id"> =&gt;</span><span class="id"> /=</span>.<br/>
